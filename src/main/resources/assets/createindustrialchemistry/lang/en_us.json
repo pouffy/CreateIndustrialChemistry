@@ -1,0 +1,9 @@
+{
+  "itemGroup.elementary_substance_tab" : "Create: Industrial Chemistry | Elementary Substance",
+  "item.createindustrialchemistry.sodium" : "Sodium",
+
+  "itemGroup.compound_substance_tab" : "Create: Industrial Chemistry | Compound Substance",
+  "item.createindustrialchemistry.sodium_hydroxide" : "Sodium Hydroxide",
+
+  "itemGroup.alkali_substance_tab" : "Create: Industrial Chemistry | Alkali Substance"
+}

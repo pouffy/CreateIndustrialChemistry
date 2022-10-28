@@ -1,0 +1,9 @@
+{
+  "itemGroup.elementary_substance_tab" : "机械动力: 工业化学 | 元素单质",
+  "item.createindustrialchemistry.sodium" : "钠",
+
+  "itemGroup.compound_substance_tab" : "机械动力: 工业化学 | 化合物",
+  "item.createindustrialchemistry.sodium_hydroxide" : "氢氧化钠",
+
+  "itemGroup.alkali_substance_tab" : "机械动力: 工业化学 | 碱性物质"
+}
