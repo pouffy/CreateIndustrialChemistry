@@ -1,4 +1,4 @@
-package net.forsteri.createindustrialchemistry.entry;
+package net.forsteri.createindustrialchemistry.entry.handlers;
 
 import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
 import net.minecraft.resources.ResourceLocation;

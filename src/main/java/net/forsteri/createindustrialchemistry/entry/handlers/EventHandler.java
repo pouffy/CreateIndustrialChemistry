@@ -1,4 +1,4 @@
-package net.forsteri.createindustrialchemistry.entry;
+package net.forsteri.createindustrialchemistry.entry.handlers;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.contraptions.processing.BasinBlock;

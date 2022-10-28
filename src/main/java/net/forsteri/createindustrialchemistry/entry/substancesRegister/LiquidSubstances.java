@@ -1,4 +1,5 @@
-package net.forsteri.createindustrialchemistry.entry.mattersRegister;
+package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
-public class Liquids {
+public class LiquidSubstances {
+    public static void register(){}
 }

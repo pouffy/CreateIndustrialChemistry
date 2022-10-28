@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "createindustrialchemistry.createindustrialchemistry.mixin",
+  "package": "net.forsteri.createindustrialchemistry.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "createindustrialchemistry.refmap.json",
   "mixins": [

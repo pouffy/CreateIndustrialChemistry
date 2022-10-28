@@ -1,4 +1,4 @@
-package net.forsteri.createindustrialchemistry.entry.mattersRegister;
+package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
@@ -11,14 +11,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import static net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters.ITEMS;
 
 public class SolidSubstances {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, CreateIndustrialChemistry.MOD_ID);
-
-    public static void register(IEventBus eventBus){
-        ITEMS.register(eventBus);
-    }
+    public static void register(){}
 
     public static final RegistryObject<Item> SODIUM = ITEMS.register("sodium",
             () -> new Sodium(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));

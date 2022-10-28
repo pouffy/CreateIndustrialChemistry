@@ -1,0 +1,7 @@
+{
+  "replace": "false",
+  "values": [
+    "createindustrialchemistry:hydrogen_source",
+    "createindustrialchemistry:hydrogen_flowing"
+  ]
+}
