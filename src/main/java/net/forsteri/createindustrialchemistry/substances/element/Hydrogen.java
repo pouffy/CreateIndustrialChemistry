@@ -1,29 +1,16 @@
-package net.forsteri.createindustrialchemistry.item.element;
+package net.forsteri.createindustrialchemistry.substances.element;
 
-import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubstances;
-import net.forsteri.createindustrialchemistry.item.abstracts.FlowingFluid;
+import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.LiquidBlockContainer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.Map;
 
 @ParametersAreNonnullByDefault
 public abstract class Hydrogen extends FlowingFluid {

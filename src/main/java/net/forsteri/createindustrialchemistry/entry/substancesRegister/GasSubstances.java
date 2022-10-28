@@ -1,9 +1,7 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
-import net.forsteri.createindustrialchemistry.item.element.Hydrogen;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;

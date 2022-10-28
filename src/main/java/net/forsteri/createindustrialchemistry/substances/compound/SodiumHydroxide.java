@@ -1,8 +1,7 @@
-package net.forsteri.createindustrialchemistry.item.compound;
+package net.forsteri.createindustrialchemistry.substances.compound;
 
-import net.forsteri.createindustrialchemistry.item.abstracts.ChemicalSubstance;
+import net.forsteri.createindustrialchemistry.substances.abstracts.ChemicalSubstance;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 
 public class SodiumHydroxide extends ChemicalSubstance {
 

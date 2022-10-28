@@ -1,7 +1,5 @@
-package net.forsteri.createindustrialchemistry.item.abstracts;
+package net.forsteri.createindustrialchemistry.substances.abstracts;
 
-import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
-import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 

@@ -1,4 +1,4 @@
-package net.forsteri.createindustrialchemistry.item.abstracts.properties.inFluid;
+package net.forsteri.createindustrialchemistry.substances.abstracts.properties.inFluid;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -54,12 +54,11 @@ public interface ExplodeInFluid extends IForgeItem {
             );
             returnItem.setRemainingFireTicks(2147483647);
             entity.level.addFreshEntity(returnItem);
-            entity.level.removeBlock(new BlockPos(
-                    Math.floor(entity.getX()),
-                    Math.floor(entity.getY()),
-                    Math.floor(entity.getZ())), false);
+            afterExplode(stack, entity);
             entity.discard();
         }
         return false;
     }
+
+    void afterExplode(ItemStack stack, ItemEntity entity);
 }

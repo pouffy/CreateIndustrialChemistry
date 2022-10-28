@@ -1,15 +1,11 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
-import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
-import net.forsteri.createindustrialchemistry.item.compound.SodiumHydroxide;
-import net.forsteri.createindustrialchemistry.item.element.Sodium;
+import net.forsteri.createindustrialchemistry.substances.compound.SodiumHydroxide;
+import net.forsteri.createindustrialchemistry.substances.element.Sodium;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import static net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters.ITEMS;
 

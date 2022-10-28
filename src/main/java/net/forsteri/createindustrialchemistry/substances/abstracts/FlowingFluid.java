@@ -1,7 +1,6 @@
-package net.forsteri.createindustrialchemistry.item.abstracts;
+package net.forsteri.createindustrialchemistry.substances.abstracts;
 
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
-import net.forsteri.createindustrialchemistry.item.element.Hydrogen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -13,7 +12,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.LiquidBlockContainer;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Material;
