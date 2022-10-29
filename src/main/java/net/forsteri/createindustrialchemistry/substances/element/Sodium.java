@@ -11,6 +11,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 @SuppressWarnings("rawtypes")
 public class Sodium extends ChemicalSubstance implements ExplodeInFluid {
@@ -29,7 +30,15 @@ public class Sodium extends ChemicalSubstance implements ExplodeInFluid {
     }
 
     @Override
-    public void afterExplode(ItemStack stack, ItemEntity entity) {
+    public void beforeExplode(ItemStack stack, ItemEntity entity) {
+        entity.level.setBlock(new BlockPos(
+                Math.floor(entity.getX()),
+                Math.floor(entity.getY()),
+                Math.floor(entity.getZ())), Blocks.AIR.defaultBlockState(),3);
+    }
+
+    @Override
+    public void afterExplode(ItemStack stack, ItemEntity entity){
         entity.level.setBlock(new BlockPos(
                 Math.floor(entity.getX()),
                 Math.floor(entity.getY()),

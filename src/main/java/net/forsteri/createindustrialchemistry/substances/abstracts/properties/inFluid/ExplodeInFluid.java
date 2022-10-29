@@ -10,7 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.extensions.IForgeItem;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "unchecked"})
 public interface ExplodeInFluid extends IForgeItem {
     TagKey[] fluidExplodesIn();
 
@@ -26,8 +26,9 @@ public interface ExplodeInFluid extends IForgeItem {
         }
 
         if(bool){
+            beforeExplode(stack, entity);
             entity.level.gameEvent(GameEvent.EXPLODE, new BlockPos(entity.getX(), entity.getY(), entity.getZ()));
-            Explosion derp = new Explosion(entity.level, entity, entity.getX(), entity.getY()+2, entity.getZ(), 3, false, Explosion.BlockInteraction.BREAK);
+            Explosion derp = new Explosion(entity.level, entity, entity.getX(), entity.getY(), entity.getZ(), 3, false, Explosion.BlockInteraction.BREAK);
             if (!entity.level.isClientSide()) {
                 derp.explode();
             }
@@ -60,5 +61,6 @@ public interface ExplodeInFluid extends IForgeItem {
         return false;
     }
 
-    void afterExplode(ItemStack stack, ItemEntity entity);
+    default void beforeExplode(ItemStack stack, ItemEntity entity) {}
+    default void afterExplode(ItemStack stack, ItemEntity entity) {}
 }
