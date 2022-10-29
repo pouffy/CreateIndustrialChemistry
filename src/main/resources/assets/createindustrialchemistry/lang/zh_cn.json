@@ -11,5 +11,6 @@
   "item.createindustrialchemistry.potassium_hydroxide": "氢氧化钾",
   "iupac.createindustrialchemistry.potassium_hydroxide": "氢氧化钾",
 
-  "itemGroup.alkali_substance_tab": "机械动力: 工业化学 | 碱性物质"
+  "itemGroup.alkali_substance_tab": "机械动力: 工业化学 | 碱性物质",
+  "iupac.createindustrialchemistry.format": "IUPAC名: %1$s"
 }

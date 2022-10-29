@@ -1,9 +1,9 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
+import net.forsteri.createindustrialchemistry.substances.equipment.FluidSubstanceBucketItem;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters.*;
 
+@SuppressWarnings({"Convert2MethodRef", "FunctionalExpressionCanBeFolded"})
 public class GasSubstances {
     public static final RegistryObject<FlowingFluid> HYDROGEN_SOURCE
             = FLUIDS.register("hydrogen_source", () -> new Hydrogen.Source(GasSubstances.HYDROGEN_PROPERTIES));
@@ -41,16 +42,12 @@ public class GasSubstances {
                     .noCollission().strength(100f).noDrops()));
 
     public static final RegistryObject<Item> HYDROGEN_BUCKET = ITEMS.register("hydrogen_bucket",
-            () -> new BucketItem(
+            () -> new FluidSubstanceBucketItem(
                     GasSubstances.HYDROGEN_SOURCE,
                     new Item.Properties()
-                    .tab(ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB)
-                    .stacksTo(1)
+                            .tab(ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB)
+                            .stacksTo(1)
             ));
 
-    public static void register(){
-//        ItemBlockRenderTypes.setRenderLayer(GasSubstances.HYDROGEN_BLOCK.get(), RenderType.translucent());
-//        ItemBlockRenderTypes.setRenderLayer(GasSubstances.HYDROGEN_SOURCE.get(), RenderType.translucent());
-//        ItemBlockRenderTypes.setRenderLayer(GasSubstances.HYDROGEN_FLOWING.get(), RenderType.translucent());
-    }
+    public static void register(){}
 }
