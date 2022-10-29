@@ -2,6 +2,7 @@ package net.forsteri.createindustrialchemistry.substances.element;
 
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
+import net.forsteri.createindustrialchemistry.substances.abstracts.RisingGases;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
@@ -13,36 +14,9 @@ import net.minecraft.world.level.material.FluidState;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public abstract class Hydrogen extends FlowingFluid {
+public abstract class Hydrogen extends RisingGases {
     protected Hydrogen(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected void spread(LevelAccessor pLevel, BlockPos pPos, FluidState pState) {
-        if (!pState.isEmpty()) {
-            BlockState blockstate = pLevel.getBlockState(pPos);
-            BlockPos blockpos = pPos.below();
-            BlockState blockState1 = pLevel.getBlockState(blockpos);
-            FluidState fluidstate = this.getNewLiquid(pLevel, blockpos, blockState1);
-//            if (this.canSpreadTo(pLevel, pPos, blockstate, Direction.UP, blockpos, blockState1, pLevel.getFluidState(blockpos), fluidstate.getType())) {
-//                this.spreadTo(pLevel, blockpos, blockState1, Direction.UP, fluidstate);
-//                if (this.sourceNeighborCount(pLevel, pPos) >= 3) {
-//                    this.spreadToSides(pLevel, pPos, pState, blockstate);
-//                }
-//            } else
-            if (pState.isSource()) {
-                if (pLevel.getBlockState(pPos.above()).getBlock().equals(Blocks.AIR) || pPos.getY() == (pLevel.getMaxBuildHeight() -1)) {
-                    //        this.spreadTo(pLevel, pPos.above(), blockState1, Direction.UP, fluidstate);
-                    pLevel.setBlock(pPos.above(), GasSubstances.HYDROGEN_BLOCK.get().defaultBlockState(), 3);
-                    pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 3);
-                }else{
-//                    this.spreadToSides(pLevel, pPos, pState, blockstate);
-                    assert true;
-                }
-            }
-
-        }
     }
 
     public static class Flowing extends Hydrogen

@@ -3,7 +3,9 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
+import net.forsteri.createindustrialchemistry.substances.compound.PotassiumHydroxide;
 import net.forsteri.createindustrialchemistry.substances.compound.SodiumHydroxide;
+import net.forsteri.createindustrialchemistry.substances.element.Potassium;
 import net.forsteri.createindustrialchemistry.substances.element.Sodium;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
@@ -17,4 +19,10 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> SODIUM_HYDROXIDE = ITEMS.register("sodium_hydroxide",
             () -> new SodiumHydroxide(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> POTASSIUM = ITEMS.register("potassium",
+            () -> new Potassium(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> POTASSIUM_HYDROXIDE = ITEMS.register("potassium_hydroxide",
+            () -> new PotassiumHydroxide(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
 }

@@ -1,9 +1,15 @@
 {
-  "itemGroup.elementary_substance_tab" : "机械动力: 工业化学 | 元素单质",
-  "item.createindustrialchemistry.sodium" : "钠",
+  "itemGroup.elementary_substance_tab": "机械动力: 工业化学 | 元素单质",
+  "item.createindustrialchemistry.sodium": "钠",
+  "iupac.createindustrialchemistry.sodium": "钠",
+  "item.createindustrialchemistry.potassium": "钾",
+  "iupac.createindustrialchemistry.potassium": "钾",
 
-  "itemGroup.compound_substance_tab" : "机械动力: 工业化学 | 化合物",
-  "item.createindustrialchemistry.sodium_hydroxide" : "氢氧化钠",
+  "itemGroup.compound_substance_tab": "机械动力: 工业化学 | 化合物",
+  "item.createindustrialchemistry.sodium_hydroxide": "氢氧化钠",
+  "iupac.createindustrialchemistry.sodium_hydroxide": "氢氧化钠",
+  "item.createindustrialchemistry.potassium_hydroxide": "氢氧化钾",
+  "iupac.createindustrialchemistry.potassium_hydroxide": "氢氧化钾",
 
-  "itemGroup.alkali_substance_tab" : "机械动力: 工业化学 | 碱性物质"
+  "itemGroup.alkali_substance_tab": "机械动力: 工业化学 | 碱性物质"
 }
