@@ -31,7 +31,7 @@ public class LiquidSubstances {
                     .luminosity(0)
                     .viscosity(0)
                     .sound(SoundEvents.BUCKET_FILL)
-                    .color(0x7EEDC6))
+                    .color(0xFDFD96))
                     .slopeFindDistance(2)
             .levelDecreasePerBlock(2)
             .block(() -> LiquidSubstances.HYDROCHLORIC_ACID_BLOCK.get())
