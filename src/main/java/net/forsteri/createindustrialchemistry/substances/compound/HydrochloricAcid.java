@@ -1,7 +1,9 @@
 package net.forsteri.createindustrialchemistry.substances.compound;
 
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -9,20 +11,15 @@ import net.minecraft.world.level.material.FluidState;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class HydrochloricAcid extends FlowingFluid {
+public abstract class HydrochloricAcid extends FlowingFluid {
 
     protected HydrochloricAcid(Properties properties) {
         super(properties);
     }
 
     @Override
-    public boolean isSource(FluidState pState) {
-        return false;
-    }
-
-    @Override
-    public int getAmount(FluidState pState) {
-        return 0;
+    public Item getTank() {
+        return LiquidSubstances.HYDROCHLORIC_ACID_TANK.get();
     }
 
     public static class Flowing extends HydrochloricAcid

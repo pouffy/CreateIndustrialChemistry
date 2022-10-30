@@ -3,7 +3,7 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.compound.HydrochloricAcid;
-import net.forsteri.createindustrialchemistry.substances.equipment.FluidSubstanceBucketItem;
+import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -35,7 +35,7 @@ public class LiquidSubstances {
                     .slopeFindDistance(2)
             .levelDecreasePerBlock(2)
             .block(() -> LiquidSubstances.HYDROCHLORIC_ACID_BLOCK.get())
-            .bucket(() -> LiquidSubstances.HYDROCHLORIC_ACID_BUCKET.get());
+            .bucket(() -> LiquidSubstances.HYDROCHLORIC_ACID_TANK.get());
 
     public static final RegistryObject<LiquidBlock> HYDROCHLORIC_ACID_BLOCK = BLOCKS.register("hydrochloric_acid",
             () -> new LiquidBlock(() -> LiquidSubstances.HYDROCHLORIC_ACID_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
@@ -43,8 +43,8 @@ public class LiquidSubstances {
                     .strength(100f)
                     .noDrops()));
 
-    public static final RegistryObject<Item> HYDROCHLORIC_ACID_BUCKET = ITEMS.register("hydrochloric_acid_bucket",
-            () -> new FluidSubstanceBucketItem(
+    public static final RegistryObject<Item> HYDROCHLORIC_ACID_TANK = ITEMS.register("hydrochloric_acid_tank",
+            () -> new MetalTank(
                     LiquidSubstances.HYDROCHLORIC_ACID_SOURCE,
                     new Item.Properties()
                             .tab(CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB)

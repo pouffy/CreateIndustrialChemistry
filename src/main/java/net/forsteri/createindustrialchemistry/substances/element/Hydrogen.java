@@ -1,9 +1,11 @@
 package net.forsteri.createindustrialchemistry.substances.element;
 
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubstances;
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.abstracts.RisingGases;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,6 +19,10 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public abstract class Hydrogen extends RisingGases {
     protected Hydrogen(Properties properties) {
         super(properties);
+    }
+
+    public Item getTank() {
+        return GasSubstances.HYDROGEN_TANK.get();
     }
 
     public static class Flowing extends Hydrogen

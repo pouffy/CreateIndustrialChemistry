@@ -2,6 +2,7 @@ package net.forsteri.createindustrialchemistry.substances.utilities.fluids;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -11,28 +12,31 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-public class FluidBlock extends Block implements TankPickup {
+@SuppressWarnings({"DeprecatedIsStillUsed", "deprecation"})
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
+public class FluidBlock extends LiquidBlock implements TankPickup{
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL;
     @Deprecated // Use getFluid
     private final net.minecraft.world.level.material.FlowingFluid fluid;
@@ -42,7 +46,7 @@ public class FluidBlock extends Block implements TankPickup {
 
     @Deprecated  // Forge: Use the constructor that takes a supplier
     public FluidBlock(net.minecraft.world.level.material.FlowingFluid pFluid, BlockBehaviour.Properties pProperties) {
-        super(pProperties);
+        super(pFluid, pProperties);
         this.fluid = pFluid;
         this.stateCache = Lists.newArrayList();
         this.stateCache.add(pFluid.getSource(false));
@@ -52,24 +56,16 @@ public class FluidBlock extends Block implements TankPickup {
         }
 
         this.stateCache.add(pFluid.getFlowing(8, true));
-        this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, 0));
         fluidStateCacheInitialized = true;
         supplier = pFluid.delegate;
     }
-
-    /**
-     * @param pFluid A fluid supplier such as {@link net.minecraftforge.registries.RegistryObject< net.minecraft.world.level.material.FlowingFluid >}
-     */
     public FluidBlock(java.util.function.Supplier<? extends net.minecraft.world.level.material.FlowingFluid> pFluid, BlockBehaviour.Properties pProperties) {
-        super(pProperties);
+        super(pFluid, pProperties);
         this.fluid = null;
         this.stateCache = Lists.newArrayList();
-        this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, 0));
         this.supplier = pFluid;
-    }
-
-    public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return pContext.isAbove(STABLE_SHAPE, pPos, true) && pState.getValue(LEVEL) == 0 && pContext.canStandOnFluid(pLevel.getFluidState(pPos.above()), pState.getFluidState()) ? STABLE_SHAPE : Shapes.empty();
     }
 
     /**
@@ -121,57 +117,12 @@ public class FluidBlock extends Block implements TankPickup {
         return Shapes.empty();
     }
 
-    public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-        if (this.shouldSpreadLiquid(pLevel, pPos, pState)) {
-            pLevel.scheduleTick(pPos, pState.getFluidState().getType(), this.fluid.getTickDelay(pLevel));
-        }
-
-    }
-
     /**
      * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
      * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
      * returns its solidified counterpart.
      * Note that this method should ideally consider only the specific direction passed in.
      */
-    public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (pState.getFluidState().isSource() || pFacingState.getFluidState().isSource()) {
-            pLevel.scheduleTick(pCurrentPos, pState.getFluidState().getType(), this.fluid.getTickDelay(pLevel));
-        }
-
-        return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-    }
-
-    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
-        if (this.shouldSpreadLiquid(pLevel, pPos, pState)) {
-            pLevel.scheduleTick(pPos, pState.getFluidState().getType(), this.fluid.getTickDelay(pLevel));
-        }
-
-    }
-
-    private boolean shouldSpreadLiquid(Level pLevel, BlockPos pPos, BlockState pState) {
-        if (this.fluid.is(FluidTags.LAVA)) {
-            boolean flag = pLevel.getBlockState(pPos.below()).is(Blocks.SOUL_SOIL);
-
-            for(Direction direction : POSSIBLE_FLOW_DIRECTIONS) {
-                BlockPos blockpos = pPos.relative(direction.getOpposite());
-                if (pLevel.getFluidState(blockpos).is(FluidTags.WATER)) {
-                    Block block = pLevel.getFluidState(pPos).isSource() ? Blocks.OBSIDIAN : Blocks.COBBLESTONE;
-                    pLevel.setBlockAndUpdate(pPos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(pLevel, pPos, pPos, block.defaultBlockState()));
-                    this.fizz(pLevel, pPos);
-                    return false;
-                }
-
-                if (flag && pLevel.getBlockState(blockpos).is(Blocks.BLUE_ICE)) {
-                    pLevel.setBlockAndUpdate(pPos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(pLevel, pPos, pPos, Blocks.BASALT.defaultBlockState()));
-                    this.fizz(pLevel, pPos);
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
 
     private void fizz(LevelAccessor pLevel, BlockPos pPos) {
         pLevel.levelEvent(1501, pPos, 0);
@@ -181,24 +132,15 @@ public class FluidBlock extends Block implements TankPickup {
         pBuilder.add(LEVEL);
     }
 
-    public ItemStack pickupBlock(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
-        if (pState.getValue(LEVEL) == 0) {
-            pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 11);
-            return new ItemStack(this.fluid.getBucket());
-        } else {
-            return ItemStack.EMPTY;
-        }
-    }
-
     // Forge start
     private final java.util.function.Supplier<? extends net.minecraft.world.level.material.Fluid> supplier;
     public net.minecraft.world.level.material.FlowingFluid getFluid() {
-        return (FlowingFluid)supplier.get();
+        return (ForgeFlowingFluid)supplier.get();
     }
 
     private boolean fluidStateCacheInitialized = false;
     protected synchronized void initFluidStateCache() {
-        if (fluidStateCacheInitialized == false) {
+        if (!fluidStateCacheInitialized) {
             this.stateCache.add(getFluid().getSource(false));
 
             for (int i = 1; i < 8; ++i)
@@ -209,7 +151,20 @@ public class FluidBlock extends Block implements TankPickup {
         }
     }
 
-    public Optional<SoundEvent> getPickupSound() {
-        return this.fluid.getPickupSound();
+    @Override
+    public ItemStack tankPickupBlock(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
+        if (pState.getValue(LEVEL) == 0) {
+            pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 11);
+            if(this.supplier.get() instanceof FlowingFluid){
+                return new ItemStack(
+                        ((FlowingFluid) this.supplier.get()).getTank()
+                );
+            }
+            return new ItemStack(
+                    ((FlowingFluid) this.supplier.get()).getTank()
+            );
+        } else {
+            return ItemStack.EMPTY;
+        }
     }
 }

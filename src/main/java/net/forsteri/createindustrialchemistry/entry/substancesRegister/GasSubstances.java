@@ -1,11 +1,12 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
-import net.forsteri.createindustrialchemistry.substances.equipment.FluidSubstanceBucketItem;
+import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
+import net.forsteri.createindustrialchemistry.substances.utilities.fluids.FluidBlock;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Material;
@@ -35,14 +36,15 @@ public class GasSubstances {
                     .slopeFindDistance(5)
                     .levelDecreasePerBlock(2)
                     .block(() -> GasSubstances.HYDROGEN_BLOCK.get())
-                    .bucket(() -> GasSubstances.HYDROGEN_BUCKET.get());
+                    .bucket(() -> Items.BUCKET)
+                    ;
 
-    public static final RegistryObject<LiquidBlock> HYDROGEN_BLOCK = BLOCKS.register("hydrogen",
-            () -> new LiquidBlock(() -> GasSubstances.HYDROGEN_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
+    public static final RegistryObject<FluidBlock> HYDROGEN_BLOCK = BLOCKS.register("hydrogen",
+            () -> new FluidBlock(() -> GasSubstances.HYDROGEN_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
                     .noCollission().strength(100f).noDrops()));
 
-    public static final RegistryObject<Item> HYDROGEN_BUCKET = ITEMS.register("hydrogen_bucket",
-            () -> new FluidSubstanceBucketItem(
+    public static final RegistryObject<Item> HYDROGEN_TANK = ITEMS.register("hydrogen_tank",
+            () -> new MetalTank(
                     GasSubstances.HYDROGEN_SOURCE,
                     new Item.Properties()
                             .tab(ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB)

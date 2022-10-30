@@ -5,6 +5,7 @@ import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubsta
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -24,7 +25,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Map;
 
 @ParametersAreNonnullByDefault
-public abstract class RisingGases extends ForgeFlowingFluid{
+public abstract class RisingGases extends FlowingFluid{
     protected RisingGases(Properties properties) {
         super(properties);
     }
@@ -178,4 +179,6 @@ public abstract class RisingGases extends ForgeFlowingFluid{
 
         }
     }
+
+    public abstract Item getTank();
 }

@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
@@ -150,4 +151,6 @@ public abstract class FlowingFluid extends ForgeFlowingFluid{
         }
 
     }
+
+    public abstract Item getTank();
 }
