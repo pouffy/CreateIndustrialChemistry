@@ -11,6 +11,8 @@
   "item.createindustrialchemistry.potassium_hydroxide" : "Potassium Hydroxide",
   "iupac.createindustrialchemistry.potassium_hydroxide" : "Potassium Hydroxide",
 
+  "itemGroup.equipment_tab": "Chemical Equipment",
+
   "itemGroup.alkali_substance_tab" : "Alkali Substance",
   "iupac.createindustrialchemistry.format": "IUPAC Name: %1$s"
 }

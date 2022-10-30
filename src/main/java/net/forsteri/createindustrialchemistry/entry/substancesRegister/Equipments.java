@@ -1,6 +1,7 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
+import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.EquipmentTab;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.Fluids;
@@ -14,7 +15,7 @@ public class Equipments {
             () -> new MetalTank(
                     Fluids.EMPTY,
                     new Item.Properties()
-                            .tab(ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB)
+                            .tab(EquipmentTab.EQUIPMENT_TAB)
                             .stacksTo(16)
             ));
 
