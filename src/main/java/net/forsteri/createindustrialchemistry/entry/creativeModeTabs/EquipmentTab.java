@@ -10,7 +10,7 @@ public class EquipmentTab {
     public static final CreativeModeTab EQUIPMENT_TAB = new CreativeModeTab("equipment_tab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Equipments.EMPTY_TANK.get());
+            return new ItemStack(Equipments.EMPTY_METAL_TANK.get());
         }
     };
 }

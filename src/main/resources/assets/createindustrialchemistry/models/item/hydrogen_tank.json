@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "item/handheld_rod",
   "textures": {
     "layer0": "createindustrialchemistry:item/fluid_tanks/hydrogen_tank"
   }
