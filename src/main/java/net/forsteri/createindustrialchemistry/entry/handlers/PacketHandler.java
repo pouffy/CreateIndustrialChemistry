@@ -13,4 +13,11 @@ public class PacketHandler {
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
     );
+
+    /*public static void register(){
+        int disc = 0;
+        INSTANCE.registerMessage(disc++,
+                EntityCorrosionPacket.class,
+                )
+    }*/
 }

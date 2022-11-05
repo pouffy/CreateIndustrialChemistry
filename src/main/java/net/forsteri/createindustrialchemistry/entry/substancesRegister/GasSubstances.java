@@ -3,7 +3,7 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
-import net.forsteri.createindustrialchemistry.substances.utilities.fluids.FluidBlock;
+import net.forsteri.createindustrialchemistry.substances.abstracts.FluidBlock;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;

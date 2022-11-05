@@ -1,9 +1,14 @@
 package net.forsteri.createindustrialchemistry.substances.compound;
 
+import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderSet;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -15,6 +20,12 @@ public abstract class HydrochloricAcid extends FlowingFluid {
 
     protected HydrochloricAcid(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public boolean isEntityInside(FluidState state, LevelReader level, BlockPos pos, Entity entity, double yToTest, HolderSet<Fluid> tag, boolean testingHead) {
+        CreateIndustrialChemistry.LOGGER.info("CHECKING ENTITY INSIDE, ENTITY INSIDE?");
+        return super.isEntityInside(state, level, pos, entity, yToTest, tag, testingHead);
     }
 
     @Override

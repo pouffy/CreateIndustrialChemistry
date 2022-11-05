@@ -1,5 +1,6 @@
 package net.forsteri.createindustrialchemistry.substances.abstracts.properties.inFluid;
 
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.TagKey;
@@ -7,19 +8,21 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.extensions.IForgeItem;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
 public interface ExplodeInFluid extends IForgeItem {
-    TagKey[] fluidExplodesIn();
+    Block[] fluidExplodesIn();
 
     ItemLike returnItem();
 
     default boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
         boolean bool = false;
-        for(TagKey fluidTagKey: fluidExplodesIn()){
-            if(entity.isEyeInFluid(fluidTagKey)) {
+        for(Block fluidTagKey: fluidExplodesIn()){
+            if(entity.level.getBlockState(
+                    new BlockPos(entity.getX(), entity.getY(), entity.getZ())
+            ).is(fluidTagKey)) {
                 bool = true;
                 break;
             }

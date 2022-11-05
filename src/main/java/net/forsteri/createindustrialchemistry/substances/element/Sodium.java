@@ -11,17 +11,17 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
-@SuppressWarnings("rawtypes")
 public class Sodium extends ChemicalSubstance implements ExplodeInFluid {
     public Sodium(Properties pProperties, CreativeModeTab... creativeModeTabs) {
         super(pProperties, creativeModeTabs);
     }
 
     @Override
-    public TagKey[] fluidExplodesIn() {
-        return new TagKey[]{FluidTags.WATER};
+    public Block[] fluidExplodesIn() {
+        return new Block[]{Blocks.WATER};
     }
 
     @Override

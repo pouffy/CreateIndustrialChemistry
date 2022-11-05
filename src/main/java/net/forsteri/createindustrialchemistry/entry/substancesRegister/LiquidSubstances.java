@@ -2,8 +2,10 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
+import net.forsteri.createindustrialchemistry.substances.abstracts.fluidBlockTypes.AcidicFluidBlock;
 import net.forsteri.createindustrialchemistry.substances.compound.HydrochloricAcid;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
+import net.forsteri.createindustrialchemistry.substances.abstracts.FluidBlock;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -27,21 +29,21 @@ public class LiquidSubstances {
     public static final ForgeFlowingFluid.Properties HYDROCHLORIC_ACID_PROPERTIES = new ForgeFlowingFluid.Properties(
             () -> LiquidSubstances.HYDROCHLORIC_ACID_SOURCE.get(), () -> LiquidSubstances.HYDROCHLORIC_ACID_FLOWING.get(),
             FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
-                    .density(-10)
+                    .density(10)
                     .luminosity(0)
                     .viscosity(0)
                     .sound(SoundEvents.BUCKET_FILL)
                     .color(0xFDFD96))
                     .slopeFindDistance(2)
-            .levelDecreasePerBlock(2)
-            .block(() -> LiquidSubstances.HYDROCHLORIC_ACID_BLOCK.get())
-            .bucket(() -> LiquidSubstances.HYDROCHLORIC_ACID_TANK.get());
+                    .levelDecreasePerBlock(2)
+                    .block(() -> LiquidSubstances.HYDROCHLORIC_ACID_BLOCK.get())
+                    .bucket(() -> LiquidSubstances.HYDROCHLORIC_ACID_TANK.get());
 
     public static final RegistryObject<LiquidBlock> HYDROCHLORIC_ACID_BLOCK = BLOCKS.register("hydrochloric_acid",
-            () -> new LiquidBlock(() -> LiquidSubstances.HYDROCHLORIC_ACID_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
+            () -> new AcidicFluidBlock(() -> LiquidSubstances.HYDROCHLORIC_ACID_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
                     .noOcclusion()
                     .strength(100f)
-                    .noDrops()));
+                    .noDrops(), -1.08f));
 
     public static final RegistryObject<Item> HYDROCHLORIC_ACID_TANK = ITEMS.register("hydrochloric_acid_tank",
             () -> new MetalTank(

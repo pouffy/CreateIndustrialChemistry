@@ -1,13 +1,15 @@
-package net.forsteri.createindustrialchemistry.substances.utilities.fluids;
+package net.forsteri.createindustrialchemistry.substances.abstracts;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.forsteri.createindustrialchemistry.substances.utilities.fluids.TankPickup;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -36,7 +38,7 @@ import java.util.Random;
 @SuppressWarnings({"DeprecatedIsStillUsed", "deprecation"})
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class FluidBlock extends LiquidBlock implements TankPickup{
+public class FluidBlock extends LiquidBlock implements TankPickup {
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL;
     @Deprecated // Use getFluid
     private final net.minecraft.world.level.material.FlowingFluid fluid;
@@ -87,7 +89,7 @@ public class FluidBlock extends LiquidBlock implements TankPickup{
     }
 
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
-        return !this.fluid.is(FluidTags.LAVA);
+        return false;
     }
 
     public FluidState getFluidState(BlockState pState) {

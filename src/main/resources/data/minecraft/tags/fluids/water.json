@@ -2,6 +2,8 @@
   "replace": "false",
   "values": [
     "createindustrialchemistry:hydrogen_source",
-    "createindustrialchemistry:hydrogen_flowing"
+    "createindustrialchemistry:hydrogen_flowing",
+    "createindustrialchemistry:hydrochloric_acid_source",
+    "createindustrialchemistry:hydrochloric_acid_flowing"
   ]
 }
