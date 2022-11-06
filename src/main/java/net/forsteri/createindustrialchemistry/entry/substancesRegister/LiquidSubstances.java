@@ -21,7 +21,7 @@ import static net.forsteri.createindustrialchemistry.entry.substancesRegister.De
 public class LiquidSubstances {
 
     public static final RegistryObject<FlowingFluid> HYDROCHLORIC_ACID_SOURCE
-            = FLUIDS.register("hydrochloric_acid_source", () -> new HydrochloricAcid.Source(LiquidSubstances.HYDROCHLORIC_ACID_PROPERTIES));
+            = FLUIDS.register("hydrochloric_acid", () -> new HydrochloricAcid.Source(LiquidSubstances.HYDROCHLORIC_ACID_PROPERTIES));
 
     public static final RegistryObject<FlowingFluid> HYDROCHLORIC_ACID_FLOWING
             = FLUIDS.register("hydrochloric_acid_flowing", () -> new HydrochloricAcid.Flowing(LiquidSubstances.HYDROCHLORIC_ACID_PROPERTIES));
@@ -49,9 +49,8 @@ public class LiquidSubstances {
             () -> new MetalTank(
                     LiquidSubstances.HYDROCHLORIC_ACID_SOURCE,
                     new Item.Properties()
-                            .tab(CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB)
                             .stacksTo(1)
-            ));
+            , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 
 
 

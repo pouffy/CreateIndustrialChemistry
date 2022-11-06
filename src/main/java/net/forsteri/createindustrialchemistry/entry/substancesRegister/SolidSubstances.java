@@ -3,6 +3,8 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
+import net.forsteri.createindustrialchemistry.substances.compound.CalciumCarbonate;
+import net.forsteri.createindustrialchemistry.substances.compound.CalciumChloride;
 import net.forsteri.createindustrialchemistry.substances.compound.PotassiumHydroxide;
 import net.forsteri.createindustrialchemistry.substances.compound.SodiumHydroxide;
 import net.forsteri.createindustrialchemistry.substances.element.Potassium;
@@ -25,4 +27,10 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> POTASSIUM_HYDROXIDE = ITEMS.register("potassium_hydroxide",
             () -> new PotassiumHydroxide(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> CALCIUM_CARBONATE = ITEMS.register("calcium_carbonate",
+            () -> new CalciumCarbonate(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> CALCIUM_CHLORIDE = ITEMS.register("calcium_chloride",
+            () -> new CalciumChloride(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 }

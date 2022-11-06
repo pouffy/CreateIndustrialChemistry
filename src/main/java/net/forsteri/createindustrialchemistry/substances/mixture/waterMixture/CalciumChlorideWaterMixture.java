@@ -1,14 +1,9 @@
-package net.forsteri.createindustrialchemistry.substances.compound;
+package net.forsteri.createindustrialchemistry.substances.mixture.waterMixture;
 
-import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.WaterMixtures;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
-import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderSet;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -16,18 +11,18 @@ import net.minecraft.world.level.material.FluidState;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public abstract class HydrochloricAcid extends FlowingFluid {
+public abstract class CalciumChlorideWaterMixture extends FlowingFluid {
 
-    protected HydrochloricAcid(Properties properties) {
+    protected CalciumChlorideWaterMixture(Properties properties) {
         super(properties);
     }
 
     @Override
     public Item getTank() {
-        return LiquidSubstances.HYDROCHLORIC_ACID_TANK.get();
+        return WaterMixtures.CALCIUM_CHLORIDE_WATER_MIXTURE_TANK.get();
     }
 
-    public static class Flowing extends HydrochloricAcid
+    public static class Flowing extends CalciumChlorideWaterMixture
     {
         public Flowing(Properties properties)
         {
@@ -49,7 +44,7 @@ public abstract class HydrochloricAcid extends FlowingFluid {
         }
     }
 
-    public static class Source extends HydrochloricAcid
+    public static class Source extends CalciumChlorideWaterMixture
     {
         public Source(Properties properties)
         {

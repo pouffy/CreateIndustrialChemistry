@@ -1,14 +1,9 @@
 package net.forsteri.createindustrialchemistry.substances.compound;
 
-import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
-import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
-import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubstances;
+import net.forsteri.createindustrialchemistry.substances.abstracts.RisingGases;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderSet;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -16,18 +11,16 @@ import net.minecraft.world.level.material.FluidState;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public abstract class HydrochloricAcid extends FlowingFluid {
-
-    protected HydrochloricAcid(Properties properties) {
+public abstract class CarbonDioxide extends RisingGases {
+    protected CarbonDioxide(Properties properties) {
         super(properties);
     }
 
-    @Override
-    public Item getTank() {
-        return LiquidSubstances.HYDROCHLORIC_ACID_TANK.get();
+    public Item getTank(){
+        return GasSubstances.CARBON_DIOXIDE_TANK.get();
     }
 
-    public static class Flowing extends HydrochloricAcid
+    public static class Flowing extends CarbonDioxide
     {
         public Flowing(Properties properties)
         {
@@ -49,7 +42,7 @@ public abstract class HydrochloricAcid extends FlowingFluid {
         }
     }
 
-    public static class Source extends HydrochloricAcid
+    public static class Source extends CarbonDioxide
     {
         public Source(Properties properties)
         {

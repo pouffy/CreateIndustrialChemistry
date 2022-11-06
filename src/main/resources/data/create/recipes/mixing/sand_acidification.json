@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "createindustrialchemistry:calcium_carbonate"
+    },
+    {
+      "fluid": "createindustrialchemistry:hydrochloric_acid",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "fluid": "createindustrialchemistry:calcium_chloride_water_mixture",
+      "amount": 1000
+    },
+    {
+      "fluid": "createindustrialchemistry:carbon_dioxide",
+      "amount": 1000
+    }
+  ],
+  "heatRequirement": "heated"
+}

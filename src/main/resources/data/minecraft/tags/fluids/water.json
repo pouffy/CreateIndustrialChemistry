@@ -1,9 +1,11 @@
 {
   "replace": "false",
   "values": [
-    "createindustrialchemistry:hydrogen_source",
+    "createindustrialchemistry:hydrogen",
     "createindustrialchemistry:hydrogen_flowing",
-    "createindustrialchemistry:hydrochloric_acid_source",
-    "createindustrialchemistry:hydrochloric_acid_flowing"
+    "createindustrialchemistry:hydrochloric_acid",
+    "createindustrialchemistry:hydrochloric_acid_flowing",
+    "createindustrialchemistry:calcium_chloride_water_mixture",
+    "createindustrialchemistry:calcium_chloride_water_mixture_flowing"
   ]
 }

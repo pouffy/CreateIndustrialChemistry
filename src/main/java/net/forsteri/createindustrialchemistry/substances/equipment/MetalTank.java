@@ -26,6 +26,9 @@ import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -35,17 +38,24 @@ import java.util.List;
 public class MetalTank extends BucketItem {
 
     protected final Fluid content;
+    protected final Collection<CreativeModeTab> creativeModeTabs;
     protected final java.util.function.Supplier<? extends Fluid> fluidSupplier;
-    public MetalTank(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder) {
+    public MetalTank(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder, CreativeModeTab... creativeModeTabs) {
         super(supplier, builder);
         this.content = null;
         this.fluidSupplier = supplier;
+        this.creativeModeTabs = new ArrayList<>(
+                Arrays.asList(creativeModeTabs)
+        );
     }
 
-    public MetalTank(Fluid pContent, Item.Properties pProperties) {
+    public MetalTank(Fluid pContent, Item.Properties pProperties, CreativeModeTab... creativeModeTabs) {
         super(pContent, pProperties);
         this.content = pContent;
         this.fluidSupplier = pContent.delegate;
+        this.creativeModeTabs = new ArrayList<>(
+                Arrays.asList(creativeModeTabs)
+        );
     }
 
     @Override
@@ -113,5 +123,10 @@ public class MetalTank extends BucketItem {
 
     public static ItemStack getEmptySuccessItem(ItemStack pBucketStack, Player pPlayer) {
         return !pPlayer.getAbilities().instabuild ? new ItemStack(Equipments.EMPTY_METAL_TANK.get()) : pBucketStack;
+    }
+
+    @Override
+    public Collection<CreativeModeTab> getCreativeTabs() {
+        return this.creativeModeTabs;
     }
 }
