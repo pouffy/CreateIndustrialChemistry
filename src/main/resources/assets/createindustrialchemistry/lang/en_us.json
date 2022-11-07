@@ -36,10 +36,10 @@
   "item.createindustrialchemistry.carbon_dioxide_tank" : "Carbon Dioxide tank",
   "iupac.createindustrialchemistry.carbon_dioxide_tank" : "Carbon dioxide",
   "formula.createindustrialchemistry.carbon_dioxide_tank" : "CO2",
-  "fluid.createindustrialchemistry.calcium_chloride_water_mixture" : "Calcium Chloride",
-  "item.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "Calcium Chloride tank",
+  "fluid.createindustrialchemistry.calcium_chloride_water_mixture" : "Calcium Chloride Water Mixture",
+  "item.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "Calcium Chloride Water Mixture tank",
   "iupac.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "Calcium Chloride",
-  "formula.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "CaCl(aq)",
+  "formula.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "CaCl2(aq)",
 
   "block.createindustrialchemistry.acidic_sand": "Acidic Sand",
   "block.createindustrialchemistry.purified_sand": "Purified Sand",

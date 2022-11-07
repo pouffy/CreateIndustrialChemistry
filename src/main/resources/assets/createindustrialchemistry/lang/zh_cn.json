@@ -37,9 +37,9 @@
   "iupac.createindustrialchemistry.carbon_dioxide_tank": "Carbon dioxide",
   "formula.createindustrialchemistry.carbon_dioxide_tank": "CO2",
   "fluid.createindustrialchemistry.calcium_chloride_water_mixture": "氯化钙水溶液",
-  "item.createindustrialchemistry.calcium_chloride_water_mixture_tank": "氯化钠水溶液罐",
+  "item.createindustrialchemistry.calcium_chloride_water_mixture_tank": "氯化钙水溶液罐",
   "iupac.createindustrialchemistry.calcium_chloride_water_mixture_tank": "Calcium Chloride",
-  "formula.createindustrialchemistry.calcium_chloride_water_mixture_tank": "CaCl(aq)",
+  "formula.createindustrialchemistry.calcium_chloride_water_mixture_tank": "CaCl2(aq)",
 
   "block.createindustrialchemistry.acidic_sand": "含酸的沙子",
   "block.createindustrialchemistry.purified_sand": "纯沙",
