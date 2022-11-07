@@ -1,12 +1,15 @@
 {
   "replace": "false",
   "values": [
+    "createindustrialchemistry:steam",
+    "createindustrialchemistry:steam_flowing",
+
     "createindustrialchemistry:hydrogen",
     "createindustrialchemistry:hydrogen_flowing",
 
     "createindustrialchemistry:carbon_dioxide",
-    "createindustrialchemistry:carbon_dioxide_flowing"
-  ,
+    "createindustrialchemistry:carbon_dioxide_flowing",
+
     "createindustrialchemistry:hydrochloric_acid",
     "createindustrialchemistry:hydrochloric_acid_flowing",
 
