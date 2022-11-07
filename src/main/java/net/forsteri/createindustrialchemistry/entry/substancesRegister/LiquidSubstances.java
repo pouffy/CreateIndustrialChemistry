@@ -4,6 +4,7 @@ import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSub
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.abstracts.fluidBlockTypes.AcidicFluidBlock;
 import net.forsteri.createindustrialchemistry.substances.compound.HydrochloricAcid;
+import net.forsteri.createindustrialchemistry.substances.compound.PureWater;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FluidBlock;
 import net.minecraft.sounds.SoundEvents;
@@ -54,10 +55,10 @@ public class LiquidSubstances {
             , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 
     public static final RegistryObject<FlowingFluid> PURE_WATER_SOURCE
-            = FLUIDS.register("pure_water", () -> new HydrochloricAcid.Source(LiquidSubstances.PURE_WATER_PROPERTIES));
+            = FLUIDS.register("pure_water", () -> new PureWater.Source(LiquidSubstances.PURE_WATER_PROPERTIES));
 
     public static final RegistryObject<FlowingFluid> PURE_WATER_FLOWING
-            = FLUIDS.register("pure_water_flowing", () -> new HydrochloricAcid.Flowing(LiquidSubstances.PURE_WATER_PROPERTIES));
+            = FLUIDS.register("pure_water_flowing", () -> new PureWater.Flowing(LiquidSubstances.PURE_WATER_PROPERTIES));
 
     public static final ForgeFlowingFluid.Properties PURE_WATER_PROPERTIES = new ForgeFlowingFluid.Properties(
             () -> LiquidSubstances.PURE_WATER_SOURCE.get(), () -> LiquidSubstances.PURE_WATER_FLOWING.get(),
