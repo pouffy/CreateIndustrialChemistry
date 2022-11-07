@@ -53,6 +53,39 @@ public class LiquidSubstances {
                             .stacksTo(1)
             , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 
+    public static final RegistryObject<FlowingFluid> PURE_WATER_SOURCE
+            = FLUIDS.register("pure_water", () -> new HydrochloricAcid.Source(LiquidSubstances.PURE_WATER_PROPERTIES));
+
+    public static final RegistryObject<FlowingFluid> PURE_WATER_FLOWING
+            = FLUIDS.register("pure_water_flowing", () -> new HydrochloricAcid.Flowing(LiquidSubstances.PURE_WATER_PROPERTIES));
+
+    public static final ForgeFlowingFluid.Properties PURE_WATER_PROPERTIES = new ForgeFlowingFluid.Properties(
+            () -> LiquidSubstances.PURE_WATER_SOURCE.get(), () -> LiquidSubstances.PURE_WATER_FLOWING.get(),
+            FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
+                    .density(10)
+                    .luminosity(0)
+                    .viscosity(0)
+                    .sound(SoundEvents.BUCKET_FILL)
+                    .color(0xFF43D5EE)
+    )
+            .slopeFindDistance(2)
+            .levelDecreasePerBlock(2)
+            .block(() -> LiquidSubstances.PURE_WATER_BLOCK.get())
+            .bucket(() -> LiquidSubstances.PURE_WATER_TANK.get());
+
+    public static final RegistryObject<LiquidBlock> PURE_WATER_BLOCK = BLOCKS.register("pure_water",
+            () -> new FluidBlock(() -> LiquidSubstances.PURE_WATER_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
+                    .noOcclusion()
+                    .strength(100f)
+                    .noDrops()));
+
+    public static final RegistryObject<Item> PURE_WATER_TANK = ITEMS.register("pure_water_tank",
+            () -> new MetalTank(
+                    LiquidSubstances.PURE_WATER_SOURCE,
+                    new Item.Properties()
+                            .stacksTo(1)
+                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
 
 
     public static void register(){}
