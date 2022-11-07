@@ -37,4 +37,7 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> CRUDE_SILICON_DIOXIDE = ITEMS.register("crude_silicon_dioxide",
             () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> CRUDE_SODIUM_METASILICATE = ITEMS.register("crude_sodium_metasilicate",
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 }

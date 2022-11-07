@@ -23,6 +23,9 @@
   "item.createindustrialchemistry.crude_silicon_dioxide" : "Crude Silicon Dioxide",
   "iupac.createindustrialchemistry.crude_silicon_dioxide" : "Crude Silicon dioxide",
   "formula.createindustrialchemistry.crude_silicon_dioxide" : "Crude SiO2",
+  "item.createindustrialchemistry.crude_sodium_metasilicate" : "Crude Sodium Metasilicate",
+  "iupac.createindustrialchemistry.crude_sodium_metasilicate" : "Crude Sodium metasilicate",
+  "formula.createindustrialchemistry.crude_sodium_metasilicate" : "Crude Na2SiO3",
 
   "fluid.createindustrialchemistry.hydrogen": "Hydrogen",
   "item.createindustrialchemistry.hydrogen_tank" : "Hydrogen Tank",

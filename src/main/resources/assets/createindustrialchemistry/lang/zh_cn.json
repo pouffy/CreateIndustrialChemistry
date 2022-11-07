@@ -23,6 +23,9 @@
   "item.createindustrialchemistry.crude_silicon_dioxide": "粗二氧化硅",
   "iupac.createindustrialchemistry.crude_silicon_dioxide": "粗Silicon dioxide",
   "formula.createindustrialchemistry.crude_silicon_dioxide": "粗SiO2",
+  "item.createindustrialchemistry.crude_sodium_metasilicate" : "粗硅酸钠",
+  "iupac.createindustrialchemistry.crude_sodium_metasilicate" : "粗Sodium metasilicate",
+  "formula.createindustrialchemistry.crude_sodium_metasilicate" : "粗Na2SiO3",
 
   "fluid.createindustrialchemistry.hydrogen": "氢气",
   "item.createindustrialchemistry.hydrogen_tank": "氢气罐",

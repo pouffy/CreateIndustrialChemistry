@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:crude_silicon_dioxide"
+    },
+    {
+      "item": "createindustrialchemistry:sodium_hydroxide",
+      "count": 2
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:crude_sodium_metasilicate"
+    },
+    {
+      "fluid": "createindustrialchemistry:steam",
+      "amount": 1000
+    }
+  ],
+  "heatRequirement": "superheated"
+}
