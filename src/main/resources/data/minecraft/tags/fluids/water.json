@@ -16,8 +16,8 @@
     "createindustrialchemistry:hydrochloric_acid",
     "createindustrialchemistry:hydrochloric_acid_flowing",
 
-    "createindustrialchemistry:calcium_chloride_water_mixture",
-    "createindustrialchemistry:calcium_chloride_water_mixture_flowing"
+    "createindustrialchemistry:calcium_chloride_aqueous_solution",
+    "createindustrialchemistry:calcium_chloride_aqueous_solution_flowing"
 
   ]
 }
