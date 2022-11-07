@@ -14,6 +14,9 @@
   ],
   "results": [
     {
+      "item": "createindustrialchemistry:acidic_sand"
+    },
+    {
       "fluid": "createindustrialchemistry:calcium_chloride_water_mixture",
       "amount": 1000
     },

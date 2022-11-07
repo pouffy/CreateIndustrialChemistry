@@ -27,6 +27,7 @@ public class DeferredRegisters {
         GasSubstances.register();
         Equipments.register();
         WaterMixtures.register();
+        Mixtures.register();
         ITEMS.register(eventBus);
         BLOCKS.register(eventBus);
         FLUIDS.register(eventBus);

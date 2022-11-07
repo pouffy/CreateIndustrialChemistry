@@ -1,0 +1,20 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "create:limestone"
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:calcium_carbonate",
+      "count": 9
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 1,
+      "chance": 0.2
+    }
+  ],
+  "processingTime": 100
+}
