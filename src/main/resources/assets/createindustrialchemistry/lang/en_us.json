@@ -26,6 +26,12 @@
   "item.createindustrialchemistry.crude_sodium_metasilicate" : "Crude Sodium Metasilicate",
   "iupac.createindustrialchemistry.crude_sodium_metasilicate" : "Crude Sodium metasilicate",
   "formula.createindustrialchemistry.crude_sodium_metasilicate" : "Crude Na2SiO3",
+  "item.createindustrialchemistry.metasilicic_acid" : "Metasilicic Acid",
+  "iupac.createindustrialchemistry.metasilicic_acid" : "Metasilicic Acid",
+  "formula.createindustrialchemistry.metasilicic_acid" : "H2SiO3",
+  "item.createindustrialchemistry.salt" : "Salt",
+  "iupac.createindustrialchemistry.salt" : "Sodium Chloride",
+  "formula.createindustrialchemistry.salt" : "NaCl",
 
   "fluid.createindustrialchemistry.hydrogen": "Hydrogen",
   "item.createindustrialchemistry.hydrogen_tank" : "Hydrogen Tank",

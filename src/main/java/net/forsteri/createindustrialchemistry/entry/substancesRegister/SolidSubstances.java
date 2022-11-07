@@ -40,4 +40,10 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> CRUDE_SODIUM_METASILICATE = ITEMS.register("crude_sodium_metasilicate",
             () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> SALT = ITEMS.register("salt",
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> METASILICIC_ACID = ITEMS.register("metasilicic_acid",
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 }

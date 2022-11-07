@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:crude_sodium_metasilicate"
+    },
+    {
+      "fluid": "createindustrialchemistry:hydrochloric_acid",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:salt",
+      "count": 2
+    },
+    {
+      "item": "createindustrialchemistry:metasilicic_acid",
+      "count" : 1
+    }
+  ]
+}
