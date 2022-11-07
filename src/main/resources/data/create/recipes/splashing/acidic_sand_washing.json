@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:acidic_sand"
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:purified_sand"
+    }
+  ]
+}

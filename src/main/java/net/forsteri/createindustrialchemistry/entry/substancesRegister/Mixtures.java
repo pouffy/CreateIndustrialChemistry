@@ -20,4 +20,10 @@ public class Mixtures {
 
     public static final RegistryObject<Item> ACIDIC_SAND_ITEM = ITEMS.register("acidic_sand",
             () -> new BlockItem(ACIDIC_SAND.get(), new Item.Properties().tab(MixtureTab.MIXTURE_TAB)));
+
+    public static final RegistryObject<Block> PURIFIED_SAND = BLOCKS.register("purified_sand",
+            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND)));
+
+    public static final RegistryObject<Item> PURIFIED_SAND_ITEM = ITEMS.register("purified_sand",
+            () -> new BlockItem(PURIFIED_SAND.get(), new Item.Properties().tab(MixtureTab.MIXTURE_TAB)));
 }
