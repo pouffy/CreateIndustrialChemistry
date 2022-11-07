@@ -36,10 +36,10 @@
   "item.createindustrialchemistry.carbon_dioxide_tank": "二氧化碳罐",
   "iupac.createindustrialchemistry.carbon_dioxide_tank": "Carbon dioxide",
   "formula.createindustrialchemistry.carbon_dioxide_tank": "CO2",
-  "fluid.createindustrialchemistry.calcium_chloride_water_mixture": "氯化钙水溶液",
-  "item.createindustrialchemistry.calcium_chloride_water_mixture_tank": "氯化钙水溶液罐",
-  "iupac.createindustrialchemistry.calcium_chloride_water_mixture_tank": "Calcium Chloride",
-  "formula.createindustrialchemistry.calcium_chloride_water_mixture_tank": "CaCl2(aq)",
+  "fluid.createindustrialchemistry.calcium_chloride_aqueous_solution": "氯化钙水溶液",
+  "item.createindustrialchemistry.calcium_chloride_aqueous_solution_tank": "氯化钙水溶液罐",
+  "iupac.createindustrialchemistry.calcium_chloride_aqueous_solution_tank": "Calcium Chloride",
+  "formula.createindustrialchemistry.calcium_chloride_aqueous_solution_tank": "CaCl2(aq)",
   "fluid.createindustrialchemistry.steam" : "蒸汽",
   "item.createindustrialchemistry.steam_tank" : "蒸汽罐",
   "iupac.createindustrialchemistry.steam_tank" : "Oxidane",
@@ -58,7 +58,7 @@
   "formula.createindustrialchemistry.empty_metal_tank": "无",
 
   "itemGroup.alkali_substance_tab": "机械动力: 工业化学 | 碱性物质",
-  "itemGroup.water_mixture_tab" : "机械动力: 工业化学 | 水溶液",
+  "itemGroup.aqueous_solution_tab" : "机械动力: 工业化学 | 水溶液",
   "itemGroup.mixture_tab" : "机械动力: 工业化学 | 混合物",
 
   "iupac.createindustrialchemistry.format": "IUPAC名: %1$s",

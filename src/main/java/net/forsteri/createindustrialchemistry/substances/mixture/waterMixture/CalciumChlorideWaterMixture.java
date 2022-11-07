@@ -1,7 +1,6 @@
 package net.forsteri.createindustrialchemistry.substances.mixture.waterMixture;
 
-import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
-import net.forsteri.createindustrialchemistry.entry.substancesRegister.WaterMixtures;
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.AqueousSolutions;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -19,7 +18,7 @@ public abstract class CalciumChlorideWaterMixture extends FlowingFluid {
 
     @Override
     public Item getTank() {
-        return WaterMixtures.CALCIUM_CHLORIDE_WATER_MIXTURE_TANK.get();
+        return AqueousSolutions.CALCIUM_CHLORIDE_AQUEOUS_SOLUTION_TANK.get();
     }
 
     public static class Flowing extends CalciumChlorideWaterMixture

@@ -1,6 +1,7 @@
 package net.forsteri.createindustrialchemistry.substances.compound;
 
 import net.forsteri.createindustrialchemistry.CreateIndustrialChemistry;
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.AqueousSolutions;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
@@ -24,7 +25,7 @@ public abstract class HydrochloricAcid extends FlowingFluid {
 
     @Override
     public Item getTank() {
-        return LiquidSubstances.HYDROCHLORIC_ACID_TANK.get();
+        return AqueousSolutions.HYDROCHLORIC_ACID_TANK.get();
     }
 
     public static class Flowing extends HydrochloricAcid

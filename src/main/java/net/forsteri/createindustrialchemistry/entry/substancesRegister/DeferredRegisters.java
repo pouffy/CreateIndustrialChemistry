@@ -9,8 +9,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.List;
-
 public class DeferredRegisters {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, CreateIndustrialChemistry.MOD_ID);
@@ -26,7 +24,7 @@ public class DeferredRegisters {
         LiquidSubstances.register();
         GasSubstances.register();
         Equipments.register();
-        WaterMixtures.register();
+        AqueousSolutions.register();
         Mixtures.register();
         ITEMS.register(eventBus);
         BLOCKS.register(eventBus);

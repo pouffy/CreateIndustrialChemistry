@@ -36,10 +36,10 @@
   "item.createindustrialchemistry.carbon_dioxide_tank" : "Carbon Dioxide Tank",
   "iupac.createindustrialchemistry.carbon_dioxide_tank" : "Carbon dioxide",
   "formula.createindustrialchemistry.carbon_dioxide_tank" : "CO2",
-  "fluid.createindustrialchemistry.calcium_chloride_water_mixture" : "Calcium Chloride Water Mixture",
-  "item.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "Calcium Chloride Water Mixture Tank",
-  "iupac.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "Calcium Chloride",
-  "formula.createindustrialchemistry.calcium_chloride_water_mixture_tank" : "CaCl2(aq)",
+  "fluid.createindustrialchemistry.calcium_chloride_aqueous_solution" : "Calcium Chloride Aqueous Solution",
+  "item.createindustrialchemistry.calcium_chloride_aqueous_solution_tank" : "Calcium Chloride Aqueous Solution Tank",
+  "iupac.createindustrialchemistry.calcium_chloride_aqueous_solution_tank" : "Calcium Chloride",
+  "formula.createindustrialchemistry.calcium_chloride_aqueous_solution_tank" : "CaCl2(aq)",
   "fluid.createindustrialchemistry.steam" : "Pure Steam",
   "item.createindustrialchemistry.steam_tank" : "Pure Steam Tank",
   "iupac.createindustrialchemistry.steam_tank" : "Oxidane",
@@ -58,7 +58,7 @@
   "formula.createindustrialchemistry.empty_metal_tank" : "Don't have one",
 
   "itemGroup.alkali_substance_tab" : "Alkali Substance",
-  "itemGroup.water_mixture_tab" : "Water Mixtures",
+  "itemGroup.aqueous_solution_tab" : "Aqueous Solutions",
   "itemGroup.mixture_tab" : "Mixtures",
 
   "iupac.createindustrialchemistry.format": "IUPAC Name: %1$s",
