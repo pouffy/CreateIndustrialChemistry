@@ -3,6 +3,7 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
+import net.forsteri.createindustrialchemistry.substances.abstracts.ChemicalSubstance;
 import net.forsteri.createindustrialchemistry.substances.compound.CalciumCarbonate;
 import net.forsteri.createindustrialchemistry.substances.compound.CalciumChloride;
 import net.forsteri.createindustrialchemistry.substances.compound.PotassiumHydroxide;
@@ -33,4 +34,7 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> CALCIUM_CHLORIDE = ITEMS.register("calcium_chloride",
             () -> new CalciumChloride(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> CRUDE_SILICON_DIOXIDE = ITEMS.register("crude_silicon_dioxide",
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 }

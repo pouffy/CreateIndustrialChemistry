@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "createindustrialchemistry:purified_sand"
+  },
+  "result": "createindustrialchemistry:crude_silicon_dioxide",
+  "experience": 0.0,
+  "cookingtime": 400
+}
