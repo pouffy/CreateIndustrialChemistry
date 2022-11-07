@@ -29,12 +29,13 @@ public class GasSubstances {
     public static final ForgeFlowingFluid.Properties HYDROGEN_PROPERTIES = new ForgeFlowingFluid.Properties(
             () -> GasSubstances.HYDROGEN_SOURCE.get(), () -> GasSubstances.HYDROGEN_FLOWING.get(),
             FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
-                    .density(-10)
+                    .density(10)
                     .luminosity(0)
                     .viscosity(0)
                     .sound(SoundEvents.BUCKET_FILL)
-                    .color(0xB3DFFF)
-                    .gaseous())
+                    .color(0xFFB3DFFF)
+                    .gaseous()
+    )
                     .slopeFindDistance(5)
                     .levelDecreasePerBlock(2)
                     .block(() -> GasSubstances.HYDROGEN_BLOCK.get())
@@ -62,12 +63,13 @@ public class GasSubstances {
     public static final ForgeFlowingFluid.Properties CARBON_DIOXIDE_PROPERTIES = new ForgeFlowingFluid.Properties(
             () -> GasSubstances.CARBON_DIOXIDE_SOURCE.get(), () -> GasSubstances.CARBON_DIOXIDE_FLOWING.get(),
             FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
-                    .density(-10)
+                    .density(10)
                     .luminosity(0)
                     .viscosity(0)
                     .sound(SoundEvents.BUCKET_FILL)
-                    .color(0xFFFFFF)
-                    .gaseous())
+                    .color(0xFFFFFFFF)
+                    .gaseous()
+    )
             .slopeFindDistance(5)
             .levelDecreasePerBlock(2)
             .block(() -> GasSubstances.CARBON_DIOXIDE_BLOCK.get())

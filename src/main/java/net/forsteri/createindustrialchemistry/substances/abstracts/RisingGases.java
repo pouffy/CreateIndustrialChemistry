@@ -169,7 +169,7 @@ public abstract class RisingGases extends FlowingFluid{
             if (pState.isSource()) {
                 if (pLevel.getBlockState(pPos.above()).getBlock().equals(Blocks.AIR) || pPos.getY() == (pLevel.getMaxBuildHeight() -1)) {
                     //        this.spreadTo(pLevel, pPos.above(), blockState1, Direction.UP, fluidstate);
-                    pLevel.setBlock(pPos.above(), GasSubstances.HYDROGEN_BLOCK.get().defaultBlockState(), 3);
+                    pLevel.setBlock(pPos.above(), this.defaultFluidState().createLegacyBlock(), 3);
                     pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 3);
                 }else{
 //                    this.spreadToSides(pLevel, pPos, pState, blockstate);
