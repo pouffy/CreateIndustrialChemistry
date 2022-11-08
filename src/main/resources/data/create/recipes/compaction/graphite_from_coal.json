@@ -1,0 +1,14 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "minecraft:coals"
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:graphite"
+    }
+  ],
+  "heatRequirement": "superheated"
+}

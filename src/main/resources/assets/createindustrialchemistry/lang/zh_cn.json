@@ -6,6 +6,9 @@
   "item.createindustrialchemistry.potassium": "钾",
   "iupac.createindustrialchemistry.potassium": "钾",
   "formula.createindustrialchemistry.potassium": "K",
+  "item.createindustrialchemistry.graphite" : "石墨",
+  "iupac.createindustrialchemistry.graphite" : "碳",
+  "formula.createindustrialchemistry.graphite" : "C",
 
   "itemGroup.compound_substance_tab": "机械动力: 工业化学 | 化合物",
   "item.createindustrialchemistry.sodium_hydroxide": "氢氧化钠",
@@ -32,6 +35,9 @@
   "item.createindustrialchemistry.salt" : "盐",
   "iupac.createindustrialchemistry.salt" : "氯化钠",
   "formula.createindustrialchemistry.salt" : "NaCl",
+  "item.createindustrialchemistry.silicon_dioxide" : "二氧化硅",
+  "iupac.createindustrialchemistry.silicon_dioxide" : "二氧化硅",
+  "formula.createindustrialchemistry.silicon_dioxide" : "SiO2",
 
   "fluid.createindustrialchemistry.hydrogen": "氢气",
   "item.createindustrialchemistry.hydrogen_tank": "氢气罐",
@@ -70,6 +76,6 @@
   "itemGroup.aqueous_solution_tab" : "机械动力: 工业化学 | 水溶液",
   "itemGroup.mixture_tab" : "机械动力: 工业化学 | 混合物",
 
-  "iupac.createindustrialchemistry.format": "IUPAC名: %1$s",
+  "iupac.createindustrialchemistry.format": "中文化学命名法名: %1$s",
   "formula.createindustrialchemistry.format": "化学式: %1$s"
 }

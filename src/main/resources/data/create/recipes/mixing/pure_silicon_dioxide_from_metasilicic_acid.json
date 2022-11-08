@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:metasilicic_acid"
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:silicon_dioxide"
+    },
+    {
+      "fluid": "createindustrialchemistry:steam",
+      "amount": 50
+    }
+  ],
+  "heatRequirement": "heated"
+}

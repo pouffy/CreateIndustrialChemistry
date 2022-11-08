@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
 import static net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters.ITEMS;
 
+@SuppressWarnings("unused")
 public class SolidSubstances {
     public static void register(){}
 
@@ -45,5 +46,11 @@ public class SolidSubstances {
             () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 
     public static final RegistryObject<Item> METASILICIC_ACID = ITEMS.register("metasilicic_acid",
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> GRAPHITE = ITEMS.register("graphite",
+            () -> new ChemicalSubstance(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> SILICON_DIOXIDE = ITEMS.register("silicon_dioxide",
             () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 }
