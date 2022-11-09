@@ -8,17 +8,16 @@ import com.simibubi.create.foundation.data.recipe.ProcessingRecipeGen;
 import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.Equipments;
-import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Consumer;
 import java.util.function.UnaryOperator;
 
+@SuppressWarnings("UnusedReturnValue")
 public class EmptyingModRecipesProvider extends ProcessingRecipeGen{
     public EmptyingModRecipesProvider(DataGenerator pGenerator) {
         super(pGenerator);
@@ -43,9 +42,15 @@ public class EmptyingModRecipesProvider extends ProcessingRecipeGen{
         for(RegistryObject<Fluid> fluid : DeferredRegisters.FLUIDS.getEntries()){
             if(fluid.get() instanceof FlowingFluid) {
                 if(fluid.get().isSource(null)) {
-                    GeneratedRecipe recipe = create(fluid.getId().getPath(), b -> b.require(((FlowingFluid) fluid.get()).getTank())
-                            .output(((FlowingFluid) fluid.get()).getSource(), 1000)
-                            .output(Equipments.EMPTY_METAL_TANK.get()));
+                    if(((FlowingFluid) fluid.get()).damageTank()){
+                        create(fluid.getId().getPath(), b -> b.require(((FlowingFluid) fluid.get()).getTank())
+                                .output(((FlowingFluid) fluid.get()).getSource(), 1000)
+                                .output(Equipments.DIRTY_TANK.get()));
+                    }else {
+                        create(fluid.getId().getPath(), b -> b.require(((FlowingFluid) fluid.get()).getTank())
+                                .output(((FlowingFluid) fluid.get()).getSource(), 1000)
+                                .output(Equipments.EMPTY_METAL_TANK.get()));
+                    }
                 }
             }
         }

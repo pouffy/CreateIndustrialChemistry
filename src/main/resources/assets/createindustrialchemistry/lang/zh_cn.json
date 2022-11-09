@@ -75,6 +75,9 @@
   "item.createindustrialchemistry.empty_metal_tank": "空罐",
   "iupac.createindustrialchemistry.empty_metal_tank": "无",
   "formula.createindustrialchemistry.empty_metal_tank": "无",
+  "item.createindustrialchemistry.dirty_metal_tank": "空罐",
+  "iupac.createindustrialchemistry.dirty_metal_tank": "无",
+  "formula.createindustrialchemistry.dirty_metal_tank": "无",
 
   "itemGroup.alkali_substance_tab": "机械动力: 工业化学 | 碱性物质",
   "itemGroup.aqueous_solution_tab" : "机械动力: 工业化学 | 水溶液",

@@ -1,6 +1,7 @@
 package net.forsteri.createindustrialchemistry.substances.equipment;
 
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.Equipments;
+import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.utilities.fluids.TankPickup;
 import net.forsteri.createindustrialchemistry.utility.ChemUtil;
 import net.minecraft.MethodsReturnNonnullByDefault;
@@ -122,7 +123,11 @@ public class MetalTank extends BucketItem {
     }
 
     public static ItemStack getEmptySuccessItem(ItemStack pBucketStack, Player pPlayer) {
-        return !pPlayer.getAbilities().instabuild ? new ItemStack(Equipments.EMPTY_METAL_TANK.get()) : pBucketStack;
+        return !pPlayer.getAbilities().instabuild ? (
+                ((FlowingFluid) ((MetalTank) pBucketStack.getItem()).fluidSupplier.get()).damageTank() ?
+                        new ItemStack(Equipments.DIRTY_TANK.get()) :
+                        new ItemStack(Equipments.EMPTY_METAL_TANK.get())
+        ) : pBucketStack;
     }
 
     @Override

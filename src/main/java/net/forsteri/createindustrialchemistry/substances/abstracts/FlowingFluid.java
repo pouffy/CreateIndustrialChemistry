@@ -153,4 +153,8 @@ public abstract class FlowingFluid extends ForgeFlowingFluid{
     }
 
     public abstract Item getTank();
+
+    public boolean damageTank(){
+        return false;
+    }
 }

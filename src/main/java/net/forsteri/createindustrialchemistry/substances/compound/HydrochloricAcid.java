@@ -65,4 +65,9 @@ public abstract class HydrochloricAcid extends FlowingFluid {
             return true;
         }
     }
+
+    @Override
+    public boolean damageTank() {
+        return true;
+    }
 }

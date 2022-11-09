@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:dirty_metal_tank"
+    },
+    {
+      "fluid": "createindustrialchemistry:distilled_water",
+      "amount": 250
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:empty_metal_tank"
+    }
+  ]
+}
