@@ -1,6 +1,7 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
+import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.FluidTab;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
 import net.forsteri.createindustrialchemistry.substances.abstracts.fluidBlockTypes.AcidicFluidBlock;
 import net.forsteri.createindustrialchemistry.substances.compound.HydrochloricAcid;
@@ -52,7 +53,7 @@ public class LiquidSubstances {
                     LiquidSubstances.PURE_WATER_SOURCE,
                     new Item.Properties()
                             .stacksTo(1)
-                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
 
 
 

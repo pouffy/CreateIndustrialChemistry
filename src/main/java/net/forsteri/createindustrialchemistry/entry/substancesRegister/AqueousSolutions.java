@@ -1,6 +1,7 @@
 package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
+import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.FluidTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.mixtures.MixtureTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.mixtures.AqueousSolutionTab;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FlowingFluid;
@@ -55,7 +56,7 @@ public class AqueousSolutions {
             () -> new MetalTank(
                     AqueousSolutions.CALCIUM_CHLORIDE_AQUEOUS_SOLUTION_SOURCE,
                     new Item.Properties()
-                            .stacksTo(1), AqueousSolutionTab.WATER_MIXTURE_TAB, MixtureTab.MIXTURE_TAB
+                            .stacksTo(1), AqueousSolutionTab.WATER_MIXTURE_TAB, MixtureTab.MIXTURE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> HYDROCHLORIC_ACID_SOURCE
@@ -89,5 +90,5 @@ public class AqueousSolutions {
                     AqueousSolutions.HYDROCHLORIC_ACID_SOURCE,
                     new Item.Properties()
                             .stacksTo(1)
-                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
 }

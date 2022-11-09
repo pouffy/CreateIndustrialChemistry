@@ -2,6 +2,7 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
+import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.FluidTab;
 import net.forsteri.createindustrialchemistry.substances.compound.CarbonDioxide;
 import net.forsteri.createindustrialchemistry.substances.compound.Steam;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
@@ -52,7 +53,7 @@ public class GasSubstances {
                     GasSubstances.HYDROGEN_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB
+                    ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> CARBON_DIOXIDE_SOURCE
@@ -86,7 +87,7 @@ public class GasSubstances {
                     GasSubstances.CARBON_DIOXIDE_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB
+                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> WATER_VAPOR_SOURCE
@@ -120,7 +121,7 @@ public class GasSubstances {
                     GasSubstances.WATER_VAPOR_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB
+                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static void register(){}

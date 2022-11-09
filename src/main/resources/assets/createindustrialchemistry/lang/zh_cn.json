@@ -42,6 +42,7 @@
   "iupac.createindustrialchemistry.silicon_dioxide" : "二氧化硅",
   "formula.createindustrialchemistry.silicon_dioxide" : "SiO2",
 
+  "itemGroup.fluid_tab" : "机械动力: 工业化学 | 流体",
   "fluid.createindustrialchemistry.hydrogen": "氢气",
   "item.createindustrialchemistry.hydrogen_tank": "氢气罐",
   "iupac.createindustrialchemistry.hydrogen_tank": "氢气",
