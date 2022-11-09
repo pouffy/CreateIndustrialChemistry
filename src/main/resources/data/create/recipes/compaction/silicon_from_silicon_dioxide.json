@@ -1,0 +1,21 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:graphite"
+    },
+    {
+      "item": "createindustrialchemistry:silicon_dioxide"
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:silicon"
+    },
+    {
+      "fluid": "createindustrialchemistry:carbon_dioxide",
+      "amount": 1000
+    }
+  ],
+  "heatRequirement": "superheated"
+}

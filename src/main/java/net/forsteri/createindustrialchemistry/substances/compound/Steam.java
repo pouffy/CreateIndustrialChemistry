@@ -17,7 +17,7 @@ public abstract class Steam extends RisingGases {
 
     @Override
     public Item getTank() {
-        return GasSubstances.STEAM_TANK.get();
+        return GasSubstances.WATER_VAPOR_TANK.get();
     }
 
     public static class Flowing extends Steam{

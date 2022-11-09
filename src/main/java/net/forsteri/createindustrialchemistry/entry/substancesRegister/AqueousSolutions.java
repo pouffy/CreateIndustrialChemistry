@@ -10,6 +10,7 @@ import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.mixture.waterMixture.CalciumChlorideWaterMixture;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -42,7 +43,7 @@ public class AqueousSolutions {
             .slopeFindDistance(2)
             .levelDecreasePerBlock(2)
             .block(() -> AqueousSolutions.CALCIUM_CHLORIDE_AQUEOUS_SOLUTION.get())
-            .bucket(() -> AqueousSolutions.CALCIUM_CHLORIDE_AQUEOUS_SOLUTION_TANK.get());
+            .bucket(() -> Items.BUCKET);
 
     public static final RegistryObject<LiquidBlock> CALCIUM_CHLORIDE_AQUEOUS_SOLUTION = BLOCKS.register("calcium_chloride_aqueous_solution",
             () -> new AcidicFluidBlock(() -> AqueousSolutions.CALCIUM_CHLORIDE_AQUEOUS_SOLUTION_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
@@ -75,7 +76,7 @@ public class AqueousSolutions {
             .slopeFindDistance(2)
             .levelDecreasePerBlock(2)
             .block(() -> AqueousSolutions.HYDROCHLORIC_ACID_BLOCK.get())
-            .bucket(() -> AqueousSolutions.HYDROCHLORIC_ACID_TANK.get());
+            .bucket(() -> Items.BUCKET);
 
     public static final RegistryObject<LiquidBlock> HYDROCHLORIC_ACID_BLOCK = BLOCKS.register("hydrochloric_acid",
             () -> new AcidicFluidBlock(() -> AqueousSolutions.HYDROCHLORIC_ACID_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)

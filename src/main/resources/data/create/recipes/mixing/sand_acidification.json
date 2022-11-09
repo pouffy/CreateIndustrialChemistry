@@ -17,7 +17,7 @@
       "item": "createindustrialchemistry:acidic_sand"
     },
     {
-      "fluid": "createindustrialchemistry:calcium_chloride_water_mixture",
+      "fluid": "createindustrialchemistry:calcium_chloride_aqueous_solution",
       "amount": 1000
     },
     {

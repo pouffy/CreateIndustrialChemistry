@@ -89,14 +89,14 @@ public class GasSubstances {
                     CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB
             ));
 
-    public static final RegistryObject<FlowingFluid> STEAM_SOURCE
-            = FLUIDS.register("steam", () -> new Steam.Source(GasSubstances.STEAM_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> WATER_VAPOR_SOURCE
+            = FLUIDS.register("water_vapor", () -> new Steam.Source(GasSubstances.WATER_VAPOR_PROPERTIES));
 
-    public static final RegistryObject<FlowingFluid> STEAM_FLOWING
-            = FLUIDS.register("steam_flowing", () -> new Steam.Flowing(GasSubstances.STEAM_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> WATER_VAPOR_FLOWING
+            = FLUIDS.register("water_vapor_flowing", () -> new Steam.Flowing(GasSubstances.WATER_VAPOR_PROPERTIES));
 
-    public static final ForgeFlowingFluid.Properties STEAM_PROPERTIES = new ForgeFlowingFluid.Properties(
-            () -> GasSubstances.STEAM_SOURCE.get(), () -> GasSubstances.STEAM_FLOWING.get(),
+    public static final ForgeFlowingFluid.Properties WATER_VAPOR_PROPERTIES = new ForgeFlowingFluid.Properties(
+            () -> GasSubstances.WATER_VAPOR_SOURCE.get(), () -> GasSubstances.WATER_VAPOR_FLOWING.get(),
             FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
                     .density(10)
                     .luminosity(0)
@@ -107,17 +107,17 @@ public class GasSubstances {
     )
             .slopeFindDistance(5)
             .levelDecreasePerBlock(2)
-            .block(() -> GasSubstances.STEAM_BLOCK.get())
+            .block(() -> GasSubstances.WATER_VAPOR_BLOCK.get())
             .bucket(() -> Items.BUCKET)
             ;
 
-    public static final RegistryObject<FluidBlock> STEAM_BLOCK = BLOCKS.register("steam",
-            () -> new FluidBlock(() -> GasSubstances.STEAM_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
+    public static final RegistryObject<FluidBlock> WATER_VAPOR_BLOCK = BLOCKS.register("water_vapor",
+            () -> new FluidBlock(() -> GasSubstances.WATER_VAPOR_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
                     .noCollission().strength(100f).noDrops()));
 
-    public static final RegistryObject<Item> STEAM_TANK = ITEMS.register("steam_tank",
+    public static final RegistryObject<Item> WATER_VAPOR_TANK = ITEMS.register("water_vapor_tank",
             () -> new MetalTank(
-                    GasSubstances.STEAM_SOURCE,
+                    GasSubstances.WATER_VAPOR_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
                     CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB

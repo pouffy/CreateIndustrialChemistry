@@ -4,10 +4,6 @@ import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSub
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
 import net.forsteri.createindustrialchemistry.substances.abstracts.ChemicalSubstance;
-import net.forsteri.createindustrialchemistry.substances.compound.CalciumCarbonate;
-import net.forsteri.createindustrialchemistry.substances.compound.CalciumChloride;
-import net.forsteri.createindustrialchemistry.substances.compound.PotassiumHydroxide;
-import net.forsteri.createindustrialchemistry.substances.compound.SodiumHydroxide;
 import net.forsteri.createindustrialchemistry.substances.element.Potassium;
 import net.forsteri.createindustrialchemistry.substances.element.Sodium;
 import net.minecraft.world.item.Item;
@@ -21,20 +17,20 @@ public class SolidSubstances {
     public static final RegistryObject<Item> SODIUM = ITEMS.register("sodium",
             () -> new Sodium(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
 
-    public static final RegistryObject<Item> SODIUM_HYDROXIDE = ITEMS.register("sodium_hydroxide",
-            () -> new SodiumHydroxide(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
-
     public static final RegistryObject<Item> POTASSIUM = ITEMS.register("potassium",
             () -> new Potassium(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
 
+    public static final RegistryObject<Item> SODIUM_HYDROXIDE = ITEMS.register("sodium_hydroxide",
+            () -> new ChemicalSubstance(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+
     public static final RegistryObject<Item> POTASSIUM_HYDROXIDE = ITEMS.register("potassium_hydroxide",
-            () -> new PotassiumHydroxide(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+            () -> new ChemicalSubstance(new Item.Properties().fireResistant(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
 
     public static final RegistryObject<Item> CALCIUM_CARBONATE = ITEMS.register("calcium_carbonate",
-            () -> new CalciumCarbonate(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, AlkaliSubstanceTab.ALKALI_SUBSTANCE_TAB));
 
     public static final RegistryObject<Item> CALCIUM_CHLORIDE = ITEMS.register("calcium_chloride",
-            () -> new CalciumChloride(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 
     public static final RegistryObject<Item> CRUDE_SILICON_DIOXIDE = ITEMS.register("crude_silicon_dioxide",
             () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
@@ -53,4 +49,7 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> SILICON_DIOXIDE = ITEMS.register("silicon_dioxide",
             () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> SILICON = ITEMS.register("silicon",
+            () -> new ChemicalSubstance(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB));
 }

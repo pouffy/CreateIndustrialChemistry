@@ -9,6 +9,7 @@ import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.abstracts.FluidBlock;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -21,10 +22,10 @@ import static net.forsteri.createindustrialchemistry.entry.substancesRegister.De
 @SuppressWarnings({"Convert2MethodRef", "FunctionalExpressionCanBeFolded"})
 public class LiquidSubstances {
     public static final RegistryObject<FlowingFluid> PURE_WATER_SOURCE
-            = FLUIDS.register("pure_water", () -> new PureWater.Source(LiquidSubstances.PURE_WATER_PROPERTIES));
+            = FLUIDS.register("distilled_water", () -> new PureWater.Source(LiquidSubstances.PURE_WATER_PROPERTIES));
 
     public static final RegistryObject<FlowingFluid> PURE_WATER_FLOWING
-            = FLUIDS.register("pure_water_flowing", () -> new PureWater.Flowing(LiquidSubstances.PURE_WATER_PROPERTIES));
+            = FLUIDS.register("distilled_water_flowing", () -> new PureWater.Flowing(LiquidSubstances.PURE_WATER_PROPERTIES));
 
     public static final ForgeFlowingFluid.Properties PURE_WATER_PROPERTIES = new ForgeFlowingFluid.Properties(
             () -> LiquidSubstances.PURE_WATER_SOURCE.get(), () -> LiquidSubstances.PURE_WATER_FLOWING.get(),
@@ -38,15 +39,15 @@ public class LiquidSubstances {
             .slopeFindDistance(2)
             .levelDecreasePerBlock(2)
             .block(() -> LiquidSubstances.PURE_WATER_BLOCK.get())
-            .bucket(() -> LiquidSubstances.PURE_WATER_TANK.get());
+            .bucket(() -> Items.BUCKET);
 
-    public static final RegistryObject<LiquidBlock> PURE_WATER_BLOCK = BLOCKS.register("pure_water",
+    public static final RegistryObject<LiquidBlock> PURE_WATER_BLOCK = BLOCKS.register("distilled_water",
             () -> new FluidBlock(() -> LiquidSubstances.PURE_WATER_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
                     .noOcclusion()
                     .strength(100f)
                     .noDrops()));
 
-    public static final RegistryObject<Item> PURE_WATER_TANK = ITEMS.register("pure_water_tank",
+    public static final RegistryObject<Item> PURE_WATER_TANK = ITEMS.register("distilled_water_tank",
             () -> new MetalTank(
                     LiquidSubstances.PURE_WATER_SOURCE,
                     new Item.Properties()

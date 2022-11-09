@@ -14,7 +14,7 @@
       "item": "createindustrialchemistry:crude_sodium_metasilicate"
     },
     {
-      "fluid": "createindustrialchemistry:steam",
+      "fluid": "createindustrialchemistry:water_vapor",
       "amount": 1000
     }
   ],
