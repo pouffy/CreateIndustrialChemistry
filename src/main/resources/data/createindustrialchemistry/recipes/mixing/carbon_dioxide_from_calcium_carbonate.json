@@ -2,15 +2,17 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "fluidTag": "createindustrialchemistry:ignore_properties/water_pure_or_not",
-      "amount": 100
+      "item": "createindustrialchemistry:calcium_carbonate"
     }
   ],
   "results": [
     {
-      "fluid": "createindustrialchemistry:water_vapor",
-      "amount": 100
+      "item": "createindustrialchemistry:calcium_oxide"
+    },
+    {
+      "fluid": "createindustrialchemistry:carbon_dioxide",
+      "amount": 1000
     }
   ],
-  "heatRequirement": "heated"
+  "heatRequirement": "superheated"
 }
