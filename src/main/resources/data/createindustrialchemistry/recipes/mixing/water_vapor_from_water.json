@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "fluidTag": "createindustrialchemistry:ignore_properties/water_pure_or_not",
+      "amount": 100
+    }
+  ],
+  "results": [
+    {
+      "fluid": "createindustrialchemistry:water_vapor",
+      "amount": 100
+    }
+  ],
+  "heatRequirement": "heated"
+}

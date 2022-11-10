@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "fluid": "createindustrialchemistry:water_vapor",
+      "amount": 100
+    }
+  ],
+  "results": [
+    {
+      "fluid": "createindustrialchemistry:distilled_water",
+      "amount": 100
+    }
+  ]
+}
