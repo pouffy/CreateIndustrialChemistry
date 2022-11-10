@@ -13,7 +13,7 @@
       "item": "createindustrialchemistry:silicon"
     },
     {
-      "fluid": "createindustrialchemistry:carbon_dioxide",
+      "fluid": "createindustrialchemistry:carbon_monoxide",
       "amount": 1000
     }
   ],

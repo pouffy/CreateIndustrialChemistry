@@ -67,6 +67,10 @@
   "item.createindustrialchemistry.distilled_water_tank" : "Distilled Water Tank",
   "iupac.createindustrialchemistry.distilled_water_tank" : "Distilled water",
   "formula.createindustrialchemistry.distilled_water_tank" : "H2O",
+  "fluid.createindustrialchemistry.carbon_monoxide": "Carbon Monoxide",
+  "item.createindustrialchemistry.carbon_monoxide_tank" : "Carbon Monoxide Tank",
+  "iupac.createindustrialchemistry.carbon_monoxide_tank" : "Carbon monoxide",
+  "formula.createindustrialchemistry.carbon_monoxide_tank" : "CO",
 
   "block.createindustrialchemistry.acidic_sand": "Acidic Sand",
   "block.createindustrialchemistry.purified_sand": "Purified Sand",

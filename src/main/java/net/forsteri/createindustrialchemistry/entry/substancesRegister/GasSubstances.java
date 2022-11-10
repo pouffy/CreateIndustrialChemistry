@@ -3,7 +3,9 @@ package net.forsteri.createindustrialchemistry.entry.substancesRegister;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.FluidTab;
+import net.forsteri.createindustrialchemistry.substances.abstracts.fluidBlockTypes.PoisonousFluidBlock;
 import net.forsteri.createindustrialchemistry.substances.compound.CarbonDioxide;
+import net.forsteri.createindustrialchemistry.substances.compound.CarbonMonoxide;
 import net.forsteri.createindustrialchemistry.substances.compound.Steam;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
@@ -119,6 +121,40 @@ public class GasSubstances {
     public static final RegistryObject<Item> WATER_VAPOR_TANK = ITEMS.register("water_vapor_tank",
             () -> new MetalTank(
                     GasSubstances.WATER_VAPOR_SOURCE,
+                    new Item.Properties()
+                            .stacksTo(1),
+                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+            ));
+
+    public static final RegistryObject<FlowingFluid> CARBON_MONOXIDE_SOURCE
+            = FLUIDS.register("carbon_monoxide", () -> new CarbonMonoxide.Source(GasSubstances.CARBON_MONOXIDE_PROPERTIES));
+
+    public static final RegistryObject<FlowingFluid> CARBON_MONOXIDE_FLOWING
+            = FLUIDS.register("carbon_monoxide_flowing", () -> new CarbonMonoxide.Flowing(GasSubstances.CARBON_MONOXIDE_PROPERTIES));
+
+    public static final ForgeFlowingFluid.Properties CARBON_MONOXIDE_PROPERTIES = new ForgeFlowingFluid.Properties(
+            () -> GasSubstances.CARBON_MONOXIDE_SOURCE.get(), () -> GasSubstances.CARBON_MONOXIDE_FLOWING.get(),
+            FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
+                    .density(10)
+                    .luminosity(0)
+                    .viscosity(0)
+                    .sound(SoundEvents.BUCKET_FILL)
+                    .color(0xFFFFFFFF)
+                    .gaseous()
+    )
+            .slopeFindDistance(5)
+            .levelDecreasePerBlock(2)
+            .block(() -> GasSubstances.CARBON_MONOXIDE_BLOCK.get())
+            .bucket(() -> Items.BUCKET)
+            ;
+
+    public static final RegistryObject<FluidBlock> CARBON_MONOXIDE_BLOCK = BLOCKS.register("carbon_monoxide",
+            () -> new PoisonousFluidBlock(() -> GasSubstances.CARBON_MONOXIDE_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER)
+                    .noCollission().strength(100f).noDrops(), 5));
+
+    public static final RegistryObject<Item> CARBON_MONOXIDE_TANK = ITEMS.register("carbon_monoxide_tank",
+            () -> new MetalTank(
+                    GasSubstances.CARBON_MONOXIDE_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
                     CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
