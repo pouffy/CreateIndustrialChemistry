@@ -41,6 +41,12 @@
   "item.createindustrialchemistry.silicon_dioxide" : "二氧化硅",
   "iupac.createindustrialchemistry.silicon_dioxide" : "二氧化硅",
   "formula.createindustrialchemistry.silicon_dioxide" : "SiO2",
+  "item.createindustrialchemistry.calcium_oxide" : "生石灰",
+  "iupac.createindustrialchemistry.calcium_oxide" : "氧化钙",
+  "formula.createindustrialchemistry.calcium_oxide" : "CaO",
+  "item.createindustrialchemistry.calcium_hydroxide" : "熟石灰",
+  "iupac.createindustrialchemistry.calcium_hydroxide" : "氢氧化钙",
+  "formula.createindustrialchemistry.calcium_hydroxide" : "Ca(OH)2",
 
   "itemGroup.fluid_tab" : "机械动力: 工业化学 | 流体",
   "fluid.createindustrialchemistry.hydrogen": "氢气",

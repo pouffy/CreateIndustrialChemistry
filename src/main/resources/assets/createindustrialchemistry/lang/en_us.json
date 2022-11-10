@@ -41,6 +41,12 @@
   "item.createindustrialchemistry.silicon_dioxide" : "Silicon Dioxide",
   "iupac.createindustrialchemistry.silicon_dioxide" : "Sodium dioxide",
   "formula.createindustrialchemistry.silicon_dioxide" : "SiO2",
+  "item.createindustrialchemistry.calcium_oxide" : "Calcium Oxide",
+  "iupac.createindustrialchemistry.calcium_oxide" : "Calcium oxide",
+  "formula.createindustrialchemistry.calcium_oxide" : "CaO",
+  "item.createindustrialchemistry.calcium_hydroxide" : "Calcium Hydroxide",
+  "iupac.createindustrialchemistry.calcium_hydroxide" : "Calcium hydroxide",
+  "formula.createindustrialchemistry.calcium_hydroxide" : "Ca(OH)2",
 
   "itemGroup.fluid_tab" : "Fluid",
   "fluid.createindustrialchemistry.hydrogen": "Hydrogen",

@@ -1,12 +1,10 @@
-package net.forsteri.createindustrialchemistry.substances.element;
+package net.forsteri.createindustrialchemistry.substances.compound;
 
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.GasSubstances;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.SolidSubstances;
 import net.forsteri.createindustrialchemistry.substances.abstracts.ChemicalSubstance;
 import net.forsteri.createindustrialchemistry.substances.abstracts.properties.inFluid.ExplodeInFluid;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -14,8 +12,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
-public class Sodium extends ChemicalSubstance implements ExplodeInFluid {
-    public Sodium(Properties pProperties, CreativeModeTab... creativeModeTabs) {
+public class CalciumOxide extends ChemicalSubstance implements ExplodeInFluid {
+    public CalciumOxide(Properties pProperties, CreativeModeTab... creativeModeTabs) {
         super(pProperties, creativeModeTabs);
     }
 
@@ -26,7 +24,12 @@ public class Sodium extends ChemicalSubstance implements ExplodeInFluid {
 
     @Override
     public ItemLike returnItem() {
-        return SolidSubstances.SODIUM_HYDROXIDE.get();
+        return SolidSubstances.CALCIUM_HYDROXIDE.get();
+    }
+
+    @Override
+    public float getExplosionRadius(){
+        return 1f;
     }
 
     @Override
@@ -34,6 +37,6 @@ public class Sodium extends ChemicalSubstance implements ExplodeInFluid {
         entity.level.setBlock(new BlockPos(
                 Math.floor(entity.getX()),
                 Math.floor(entity.getY()),
-                Math.floor(entity.getZ())), GasSubstances.HYDROGEN_BLOCK.get().defaultBlockState(),3);
+                Math.floor(entity.getZ())), GasSubstances.WATER_VAPOR_BLOCK.get().defaultBlockState(),3);
     }
 }

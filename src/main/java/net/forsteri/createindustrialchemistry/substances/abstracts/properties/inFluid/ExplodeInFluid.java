@@ -1,14 +1,13 @@
 package net.forsteri.createindustrialchemistry.substances.abstracts.properties.inFluid;
 
-import net.forsteri.createindustrialchemistry.entry.substancesRegister.LiquidSubstances;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.extensions.IForgeItem;
 
@@ -31,7 +30,7 @@ public interface ExplodeInFluid extends IForgeItem {
         if(bool){
             beforeExplode(stack, entity);
             entity.level.gameEvent(GameEvent.EXPLODE, new BlockPos(entity.getX(), entity.getY(), entity.getZ()));
-            Explosion derp = new Explosion(entity.level, entity, entity.getX(), entity.getY(), entity.getZ(), 3, false, Explosion.BlockInteraction.BREAK);
+            Explosion derp = new Explosion(entity.level, entity, entity.getX(), entity.getY(), entity.getZ(), getExplosionRadius(), false, Explosion.BlockInteraction.BREAK);
             if (!entity.level.isClientSide()) {
                 derp.explode();
             }
@@ -59,11 +58,20 @@ public interface ExplodeInFluid extends IForgeItem {
             returnItem.setRemainingFireTicks(2147483647);
             entity.level.addFreshEntity(returnItem);
             afterExplode(stack, entity);
-            entity.discard();
+            entity.kill();
         }
         return false;
     }
 
-    default void beforeExplode(ItemStack stack, ItemEntity entity) {}
+    default void beforeExplode(ItemStack stack, ItemEntity entity) {
+        entity.level.setBlock(new BlockPos(
+                Math.floor(entity.getX()),
+                Math.floor(entity.getY()),
+                Math.floor(entity.getZ())), Blocks.AIR.defaultBlockState(),3);
+    }
     default void afterExplode(ItemStack stack, ItemEntity entity) {}
+
+    default float getExplosionRadius(){
+        return 3;
+    }
 }

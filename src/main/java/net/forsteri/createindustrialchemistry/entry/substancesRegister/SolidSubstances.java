@@ -4,6 +4,7 @@ import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.CompoundSub
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.ElementarySubstanceTab;
 import net.forsteri.createindustrialchemistry.entry.creativeModeTabs.families.AlkaliSubstanceTab;
 import net.forsteri.createindustrialchemistry.substances.abstracts.ChemicalSubstance;
+import net.forsteri.createindustrialchemistry.substances.compound.CalciumOxide;
 import net.forsteri.createindustrialchemistry.substances.element.Potassium;
 import net.forsteri.createindustrialchemistry.substances.element.Sodium;
 import net.minecraft.world.item.Item;
@@ -52,4 +53,10 @@ public class SolidSubstances {
 
     public static final RegistryObject<Item> SILICON = ITEMS.register("silicon",
             () -> new ChemicalSubstance(new Item.Properties(), ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> CALCIUM_OXIDE = ITEMS.register("calcium_oxide",
+            () -> new CalciumOxide(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
+
+    public static final RegistryObject<Item> CALCIUM_HYDROXIDE = ITEMS.register("calcium_hydroxide",
+            () -> new ChemicalSubstance(new Item.Properties(), CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB));
 }
