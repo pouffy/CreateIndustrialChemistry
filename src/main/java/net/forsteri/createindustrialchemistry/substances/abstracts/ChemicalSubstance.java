@@ -21,6 +21,7 @@ public class ChemicalSubstance extends Item{
         this.creativeModeTabs = new ArrayList<>(
                 Arrays.asList(creativeModeTabs)
         );
+        this.creativeModeTabs.add(CreativeModeTab.TAB_SEARCH);
     }
 
     @Override

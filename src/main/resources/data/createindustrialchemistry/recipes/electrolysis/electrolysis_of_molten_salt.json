@@ -1,0 +1,19 @@
+{
+  "type": "createindustrialchemistry:electrolysis",
+  "ingredients": [
+    {
+      "fluid": "createindustrialchemistry:molten_salt",
+      "amount": 500
+    }
+  ],
+  "results": [
+    {
+      "fluid": "createindustrialchemistry:chlorine",
+      "amount": 250
+    },
+    {
+      "item": "createindustrialchemistry:sodium",
+      "count": 5
+    }
+  ]
+}

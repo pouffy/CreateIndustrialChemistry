@@ -13,6 +13,7 @@ import com.simibubi.create.foundation.utility.VecHelper;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.tileEntities.RecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;

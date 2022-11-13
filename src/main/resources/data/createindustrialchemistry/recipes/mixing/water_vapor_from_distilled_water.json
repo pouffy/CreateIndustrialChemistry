@@ -2,7 +2,7 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "fluid": "minecraft:water",
+      "fluid": "createindustrialchemistry:distilled_water",
       "amount": 100
     }
   ],
@@ -10,10 +10,6 @@
     {
       "fluid": "createindustrialchemistry:water_vapor",
       "amount": 100
-    },
-    {
-      "item": "createindustrialchemistry:salt",
-      "count": 3
     }
   ],
   "heatRequirement": "heated"

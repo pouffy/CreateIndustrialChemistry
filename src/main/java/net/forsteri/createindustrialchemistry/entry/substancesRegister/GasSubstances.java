@@ -7,6 +7,7 @@ import net.forsteri.createindustrialchemistry.substances.abstracts.fluidBlockTyp
 import net.forsteri.createindustrialchemistry.substances.compound.CarbonDioxide;
 import net.forsteri.createindustrialchemistry.substances.compound.CarbonMonoxide;
 import net.forsteri.createindustrialchemistry.substances.compound.Steam;
+import net.forsteri.createindustrialchemistry.substances.element.Chlorine;
 import net.forsteri.createindustrialchemistry.substances.element.Oxygen;
 import net.forsteri.createindustrialchemistry.substances.equipment.MetalTank;
 import net.forsteri.createindustrialchemistry.substances.element.Hydrogen;
@@ -190,6 +191,40 @@ public class GasSubstances {
     public static final RegistryObject<Item> OXYGEN_TANK = ITEMS.register("oxygen_tank",
             () -> new MetalTank(
                     GasSubstances.OXYGEN_SOURCE,
+                    new Item.Properties()
+                            .stacksTo(1),
+                    ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+            ));
+
+    public static final RegistryObject<FlowingFluid> CHLORINE_SOURCE
+            = FLUIDS.register("chlorine", () -> new Chlorine.Source(GasSubstances.CHLORINE_PROPERTIES));
+
+    public static final RegistryObject<FlowingFluid> CHLORINE_FLOWING
+            = FLUIDS.register("chlorine_flowing", () -> new Chlorine.Flowing(GasSubstances.CHLORINE_PROPERTIES));
+
+    public static final ForgeFlowingFluid.Properties CHLORINE_PROPERTIES = new ForgeFlowingFluid.Properties(
+            () -> GasSubstances.CHLORINE_SOURCE.get(), () -> GasSubstances.CHLORINE_FLOWING.get(),
+            FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
+                    .density(10)
+                    .luminosity(0)
+                    .viscosity(0)
+                    .sound(SoundEvents.BUCKET_FILL)
+                    .color(0xFFFDFDA0)
+                    .gaseous()
+    )
+            .slopeFindDistance(5)
+            .levelDecreasePerBlock(2)
+            .block(() -> GasSubstances.CHLORINE_BLOCK.get())
+            .bucket(() -> Items.BUCKET)
+            ;
+
+    public static final RegistryObject<FluidBlock> CHLORINE_BLOCK = BLOCKS.register("chlorine",
+            () -> new PoisonousFluidBlock(() -> GasSubstances.CHLORINE_SOURCE.get(), BlockBehaviour.Properties.of(Material.LAVA)
+                    .noCollission().strength(100f).noDrops(), 6));
+
+    public static final RegistryObject<Item> CHLORINE_TANK = ITEMS.register("chlorine_tank",
+            () -> new MetalTank(
+                    GasSubstances.CHLORINE_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
                     ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB

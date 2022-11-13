@@ -72,7 +72,7 @@ public class AqueousSolutions {
                     .luminosity(0)
                     .viscosity(0)
                     .sound(SoundEvents.BUCKET_FILL)
-                    .color(0xFFFDFD96)
+                    .color(0xFFFFFD96)
     )
             .slopeFindDistance(2)
             .levelDecreasePerBlock(2)
@@ -90,5 +90,5 @@ public class AqueousSolutions {
                     AqueousSolutions.HYDROCHLORIC_ACID_SOURCE,
                     new Item.Properties()
                             .stacksTo(1)
-                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
+                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, MixtureTab.MIXTURE_TAB, AqueousSolutionTab.WATER_MIXTURE_TAB, FluidTab.FLUID_TAB));
 }

@@ -48,6 +48,7 @@ public class MetalTank extends BucketItem {
         this.creativeModeTabs = new ArrayList<>(
                 Arrays.asList(creativeModeTabs)
         );
+        this.creativeModeTabs.add(CreativeModeTab.TAB_SEARCH);
     }
 
     public MetalTank(Fluid pContent, Item.Properties pProperties, CreativeModeTab... creativeModeTabs) {
