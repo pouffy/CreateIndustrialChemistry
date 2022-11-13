@@ -11,6 +11,9 @@ import com.simibubi.create.foundation.utility.AnimationTickHolder;
 import com.simibubi.create.foundation.utility.Couple;
 import com.simibubi.create.foundation.utility.VecHelper;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.tileEntities.RecipeTypes;
+import net.minecraft.client.particle.GlowParticle;
+import net.minecraft.client.particle.ParticleEngine;
+import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -24,6 +27,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -40,6 +44,9 @@ public class KineticElectrolyzerTileEntity extends BasinOperatingTileEntity {
     private static final Object ElectrolysisRecipesKey = new Object();
 
     public int runningTicks;
+
+    protected int tickUntilSpawnParticle = 0;
+
     public int processingTicks;
     public boolean running;
 
@@ -67,6 +74,12 @@ public class KineticElectrolyzerTileEntity extends BasinOperatingTileEntity {
     @Override
     public void tick() {
         super.tick();
+
+        if(tickUntilSpawnParticle == 0 && getSpeed() != 0) {
+            spawnParticles(level, getBlockPos().below());
+            tickUntilSpawnParticle = 3;
+        }
+        tickUntilSpawnParticle--;
 
         if (runningTicks >= 40) {
             running = false;
@@ -117,6 +130,8 @@ public class KineticElectrolyzerTileEntity extends BasinOperatingTileEntity {
             if (runningTicks != 20)
                 runningTicks++;
         }
+
+
     }
 
     public void renderParticles() {
@@ -231,5 +246,22 @@ public class KineticElectrolyzerTileEntity extends BasinOperatingTileEntity {
             return;
         if (runningTicks == 20)
             AllSoundEvents.MIXING.playAt(level, worldPosition, .75f, 1, true);
+    }
+
+    private static void spawnParticles(Level pLevel, BlockPos pPos) {
+        double d0 = 0.5625D;
+        Random random = pLevel.random;
+
+        for(Direction direction : Direction.values()) {
+            BlockPos blockpos = pPos.relative(direction);
+            if (!pLevel.getBlockState(blockpos).isSolidRender(pLevel, blockpos)) {
+                Direction.Axis direction$axis = direction.getAxis();
+                double d1 = direction$axis == Direction.Axis.X ? 0.5D + 0.25625D * (double)direction.getStepX() : (double)random.nextFloat();
+                double d2 = direction$axis == Direction.Axis.Y ? 0.5D + 0.25625D * (double)direction.getStepY() : (double)random.nextFloat();
+                double d3 = direction$axis == Direction.Axis.Z ? 0.5D + 0.25625D * (double)direction.getStepZ() : (double)random.nextFloat();
+                pLevel.addParticle(ParticleTypes.ELECTRIC_SPARK, (double)pPos.getX() + d1, (double)pPos.getY() + d2, (double)pPos.getZ() + d3, 0.0D, 0.0D, 0.0D);
+            }
+        }
+
     }
 }
