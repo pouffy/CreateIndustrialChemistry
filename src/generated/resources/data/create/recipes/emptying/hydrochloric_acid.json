@@ -1,0 +1,17 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "createindustrialchemistry:hydrochloric_acid_tank"
+    }
+  ],
+  "results": [
+    {
+      "item": "createindustrialchemistry:dirty_metal_tank"
+    },
+    {
+      "fluid": "createindustrialchemistry:hydrochloric_acid",
+      "amount": 1000
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "createindustrialchemistry:distilled_water",
+    "createindustrialchemistry:distilled_water_flowing",
+    "createindustrialchemistry:molten_salt",
+    "createindustrialchemistry:molten_salt_flowing",
+    "createindustrialchemistry:hydrogen",
+    "createindustrialchemistry:hydrogen_flowing",
+    "createindustrialchemistry:carbon_dioxide",
+    "createindustrialchemistry:carbon_dioxide_flowing",
+    "createindustrialchemistry:water_vapor",
+    "createindustrialchemistry:water_vapor_flowing",
+    "createindustrialchemistry:carbon_monoxide",
+    "createindustrialchemistry:carbon_monoxide_flowing",
+    "createindustrialchemistry:oxygen",
+    "createindustrialchemistry:oxygen_flowing",
+    "createindustrialchemistry:chlorine",
+    "createindustrialchemistry:chlorine_flowing",
+    "createindustrialchemistry:calcium_chloride_aqueous_solution",
+    "createindustrialchemistry:calcium_chloride_aqueous_solution_flowing",
+    "createindustrialchemistry:hydrochloric_acid",
+    "createindustrialchemistry:hydrochloric_acid_flowing"
+  ]
+}
