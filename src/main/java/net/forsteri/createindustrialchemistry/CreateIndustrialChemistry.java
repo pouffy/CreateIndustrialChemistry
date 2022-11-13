@@ -1,8 +1,13 @@
 package net.forsteri.createindustrialchemistry;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.tterrag.registrate.providers.ProviderType;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.SolidSubstances;
+import net.forsteri.createindustrialchemistry.entry.substancesRegister.tileEntities.RecipeTypes;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,10 +29,13 @@ public class CreateIndustrialChemistry {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final NonNullSupplier<CreateRegistrate> REGISTRATE = CreateRegistrate.lazy(CreateIndustrialChemistry.MOD_ID);
+
     public CreateIndustrialChemistry() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         DeferredRegisters.register(eventBus);
+        RecipeTypes.register(eventBus);
         eventBus.addListener(this::setup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -55,5 +63,13 @@ public class CreateIndustrialChemistry {
             // Register a new block here
             LOGGER.info("HELLO from Register Block");
         }
+    }
+
+    public static ResourceLocation asResource(String path) {
+        return new ResourceLocation(CreateIndustrialChemistry.MOD_ID, path);
+    }
+
+    public static CreateRegistrate registrate() {
+        return REGISTRATE.get();
     }
 }
