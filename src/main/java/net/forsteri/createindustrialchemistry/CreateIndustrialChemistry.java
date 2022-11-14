@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.forsteri.createindustrialchemistry.entry.handlers.ColorHandlers;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.DeferredRegisters;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.SolidSubstances;
 import net.forsteri.createindustrialchemistry.entry.substancesRegister.tileEntities.RecipeTypes;
@@ -39,6 +40,7 @@ public class CreateIndustrialChemistry {
         eventBus.addListener(this::setup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(ColorHandlers::registerItemColors);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

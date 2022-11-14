@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createindustrialchemistry:item/fluid_tanks/empty_metal_tank",
+    "layer1": "createindustrialchemistry:item/fluid_tanks/tank_overlay"
+  }
+}

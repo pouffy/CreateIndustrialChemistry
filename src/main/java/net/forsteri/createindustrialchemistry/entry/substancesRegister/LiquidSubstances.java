@@ -54,8 +54,8 @@ public class LiquidSubstances {
             () -> new MetalTank(
                     LiquidSubstances.PURE_WATER_SOURCE,
                     new Item.Properties()
-                            .stacksTo(1)
-                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
+                            .stacksTo(1),
+                    0xFF43D5EE, CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
 
     public static final RegistryObject<FlowingFluid> MOLTEN_SALT_SOURCE
             = FLUIDS.register("molten_salt", () -> new MoltenSalt.Source(LiquidSubstances.MOLTEN_SALT_PROPERTIES));
@@ -88,7 +88,7 @@ public class LiquidSubstances {
                     LiquidSubstances.MOLTEN_SALT_SOURCE,
                     new Item.Properties()
                             .stacksTo(1)
-                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
+                    ,0xFFDD6612, CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB));
 
 
 

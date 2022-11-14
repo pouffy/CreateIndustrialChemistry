@@ -56,7 +56,8 @@ public class AqueousSolutions {
             () -> new MetalTank(
                     AqueousSolutions.CALCIUM_CHLORIDE_AQUEOUS_SOLUTION_SOURCE,
                     new Item.Properties()
-                            .stacksTo(1), AqueousSolutionTab.WATER_MIXTURE_TAB, MixtureTab.MIXTURE_TAB, FluidTab.FLUID_TAB
+                            .stacksTo(1),
+                    0xFFFFFF, AqueousSolutionTab.WATER_MIXTURE_TAB, MixtureTab.MIXTURE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> HYDROCHLORIC_ACID_SOURCE
@@ -90,5 +91,5 @@ public class AqueousSolutions {
                     AqueousSolutions.HYDROCHLORIC_ACID_SOURCE,
                     new Item.Properties()
                             .stacksTo(1)
-                    , CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, MixtureTab.MIXTURE_TAB, AqueousSolutionTab.WATER_MIXTURE_TAB, FluidTab.FLUID_TAB));
+                    ,0x88FFFD96, CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, MixtureTab.MIXTURE_TAB, AqueousSolutionTab.WATER_MIXTURE_TAB, FluidTab.FLUID_TAB));
 }

@@ -141,15 +141,10 @@ public abstract class RisingGases extends FlowingFluid{
     }
 
     protected void spreadTo(LevelAccessor pLevel, BlockPos pPos, BlockState pBlockState, Direction pDirection, FluidState pFluidState) {
-        if (pBlockState.getBlock() instanceof LiquidBlockContainer) {
-            ((LiquidBlockContainer)pBlockState.getBlock()).placeLiquid(pLevel, pPos, pBlockState, pFluidState);
-        } else {
-            if (!pBlockState.isAir()) {
-                this.beforeDestroyingBlock(pLevel, pPos, pBlockState);
-            }
-
-            pLevel.setBlock(pPos, pFluidState.createLegacyBlock(), 3);
+        if (!pBlockState.isAir()) {
+            this.beforeDestroyingBlock(pLevel, pPos, pBlockState);
         }
+        pLevel.setBlock(pPos, pFluidState.createLegacyBlock(), 3);
 
     }
 

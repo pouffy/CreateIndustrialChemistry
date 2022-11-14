@@ -41,6 +41,10 @@ public class MetalTank extends BucketItem {
     protected final Fluid content;
     protected final Collection<CreativeModeTab> creativeModeTabs;
     protected final java.util.function.Supplier<? extends Fluid> fluidSupplier;
+    protected int color;
+
+    public boolean genModel;
+
     public MetalTank(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder, CreativeModeTab... creativeModeTabs) {
         super(supplier, builder);
         this.content = null;
@@ -48,6 +52,44 @@ public class MetalTank extends BucketItem {
         this.creativeModeTabs = new ArrayList<>(
                 Arrays.asList(creativeModeTabs)
         );
+        this.color = 0xFFFFFF;
+        this.genModel = true;
+        this.creativeModeTabs.add(CreativeModeTab.TAB_SEARCH);
+    }
+
+    public MetalTank(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder, boolean genModel,CreativeModeTab... creativeModeTabs) {
+        super(supplier, builder);
+        this.content = null;
+        this.fluidSupplier = supplier;
+        this.creativeModeTabs = new ArrayList<>(
+                Arrays.asList(creativeModeTabs)
+        );
+        this.color = 0xFFFFFF;
+        this.genModel = genModel;
+        this.creativeModeTabs.add(CreativeModeTab.TAB_SEARCH);
+    }
+
+    public MetalTank(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder, int color, CreativeModeTab... creativeModeTabs) {
+        super(supplier, builder);
+        this.content = null;
+        this.fluidSupplier = supplier;
+        this.genModel = true;
+        this.creativeModeTabs = new ArrayList<>(
+                Arrays.asList(creativeModeTabs)
+        );
+        this.color = color;
+        this.creativeModeTabs.add(CreativeModeTab.TAB_SEARCH);
+    }
+
+    public MetalTank(java.util.function.Supplier<? extends Fluid> supplier, Item.Properties builder, int color, boolean genModel,CreativeModeTab... creativeModeTabs) {
+        super(supplier, builder);
+        this.content = null;
+        this.fluidSupplier = supplier;
+        this.genModel = genModel;
+        this.creativeModeTabs = new ArrayList<>(
+                Arrays.asList(creativeModeTabs)
+        );
+        this.color = color;
         this.creativeModeTabs.add(CreativeModeTab.TAB_SEARCH);
     }
 
@@ -58,6 +100,7 @@ public class MetalTank extends BucketItem {
         this.creativeModeTabs = new ArrayList<>(
                 Arrays.asList(creativeModeTabs)
         );
+        this.genModel = false;
     }
 
     @Override
@@ -135,4 +178,9 @@ public class MetalTank extends BucketItem {
     public Collection<CreativeModeTab> getCreativeTabs() {
         return this.creativeModeTabs;
     }
+
+    public int getColor() {
+        return color;
+    }
+
 }

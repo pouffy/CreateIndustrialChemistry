@@ -9,7 +9,7 @@
   "results": [
     {
       "fluid": "createindustrialchemistry:molten_salt",
-      "amount": 100
+      "amount": 50
     }
   ],
   "heatRequirement": "superheated"

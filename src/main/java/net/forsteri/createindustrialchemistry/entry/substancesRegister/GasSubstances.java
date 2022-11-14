@@ -57,7 +57,7 @@ public class GasSubstances {
                     GasSubstances.HYDROGEN_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+                    false, ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> CARBON_DIOXIDE_SOURCE
@@ -91,7 +91,7 @@ public class GasSubstances {
                     GasSubstances.CARBON_DIOXIDE_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+                    0xFFFFFFFF, CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> WATER_VAPOR_SOURCE
@@ -125,7 +125,7 @@ public class GasSubstances {
                     GasSubstances.WATER_VAPOR_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+                    0x8843D5EE ,CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> CARBON_MONOXIDE_SOURCE
@@ -159,7 +159,7 @@ public class GasSubstances {
                     GasSubstances.CARBON_MONOXIDE_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+                    0xFFFFFFFF,CompoundSubstanceTab.COMPOUND_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> OXYGEN_SOURCE
@@ -193,7 +193,7 @@ public class GasSubstances {
                     GasSubstances.OXYGEN_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+                    false, ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static final RegistryObject<FlowingFluid> CHLORINE_SOURCE
@@ -227,7 +227,7 @@ public class GasSubstances {
                     GasSubstances.CHLORINE_SOURCE,
                     new Item.Properties()
                             .stacksTo(1),
-                    ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
+                    false ,ElementarySubstanceTab.ELEMENTARY_SUBSTANCE_TAB, FluidTab.FLUID_TAB
             ));
 
     public static void register(){}
