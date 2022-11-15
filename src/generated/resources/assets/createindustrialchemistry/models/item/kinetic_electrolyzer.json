@@ -1,3 +1,3 @@
 {
-  "parent": "createindustrialchemistry:block/kinetic_electrolyzer"
+  "parent": "createindustrialchemistry:block/kinetic_electrolyzer/item"
 }
